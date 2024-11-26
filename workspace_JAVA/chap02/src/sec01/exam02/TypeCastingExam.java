@@ -40,12 +40,26 @@ public class TypeCastingExam {
 		int count = 4;
 		System.out.println((int)total/count);
 		
-		double totl = 8.213;
-		int cot = 4;
+		double totl = 4.3;
+		double cot = 4;
 		double d_result = totl / cot;
 		int i_result = (int)d_result;
-		System.out.println("예아:" + (int)i_result);
+		System.out.println("소숫자리없이 명당내야할 값 :" + (int)i_result);
 //		double -> int 로 변환시 소숫자리 나라감 
+		
+//		깜퀴
+//		그렇다면 주최자는 얼마를 내야하는가?
+		System.out.println("\n얼마내야됨?" +(d_result - ) +"\n");
+		
+//		문제1
+		int o = 30;
+		int p = 407;
+		int temp = o;
+			o = p;
+			p = temp;
+		System.out.println(o); //407
+		System.out.println(p); //30
+		
 		
 	}
 }

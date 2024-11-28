@@ -120,10 +120,42 @@ public class OpExam {
 		
 		int n2 = 10;
 		System.out.println(n2++ + 10 +1);
-		
+
 		int z = 1;
 		System.out.println( z++ + ++z );
-		System.out.println( z );
+		System.out.println( z+ "\n\n\n" );
 		
+		int score = 95;
+		char grad = (score > 90) ? 'A' : 'B'; // A Ãâ·Â
+		System.out.println("\t" + grad);
+		
+			
+		int value = 365;
+		System.out.println( value / 100 * 100);
+		
+		int var1 = 5;
+		int var2 = 2;
+		double var3 = ((double)var1/(double)var2);
+		int var4 = (int)(var3 * var2);
+		System.out.println(var4);
+		
+		double v1 = 1000;
+		double v2 = 457;
+		double v3 = (v1 / v2) * 1000;
+		double v4 = (int)v3;
+		double v5 = v4 / 1000;
+		System.out.println( v5 );
+		double y1 = 1000;
+		double y2 = 457;
+		double y3 = (y1 / y2) * 1000;
+		double y4 = (int)((y1 /y2) * 1000);
+		double y5 = ((double)(int)((y1 / y2) * 1000)) / 1000;
+		System.out.println( y5 );
 	}
 }
+
+
+
+
+
+

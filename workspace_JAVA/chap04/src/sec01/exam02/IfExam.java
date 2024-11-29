@@ -161,6 +161,14 @@ public class IfExam {
 			System.out.println("다름");
 		}
 		
+		int n10 = wkfl / 10;
+		int n1 = wkfl % 10;
+		
+		if (n10 == n1) {
+			System.out.println(n10 + "과" + n1 + "은 같음");
+		} else {
+			System.out.println(n10 + "과" + n1 + "은 다름");
+		}
 //		어려운문제
 //		사각형의 한쪽 모서리 : 10,20
 //		다른쪽모서리 : 90, 100
@@ -201,15 +209,101 @@ public class IfExam {
 		int rnd3 = rnd2 + 1;
 		System.out.println(rnd3);
 		
-
+		
+		switch (rand4) {
+		case 1:
+			System.out.println("1번");
+			break;
+		case 2:
+			System.out.println("2번");
+			break;
+		case 3:
+			System.out.println("3번");
+			break;
+		case 4:
+			System.out.println("4번");
+			break;
+		case 5:
+			System.out.println("5번");
+			break;
+		case 6:
+			System.out.println("6번");
+			break;
+		}
+		
+//		switch 에전달한 값과 case 의 값이 일치하면 해당 실행문을 실행
+//		if, else if 가 ==로만 이루어진경우 witch를 사용할수있다.
+//		즉 == 을 제외한 비교연산자는 사용할수없다.
+//		비교가능타입 : char, byte, short, int ,string
+//		사용못하는타입 : boolean, long, float, double
 		
 		
+		int month = 11 ;
+		switch (month) {
+		case 1 :
+			System.out.println("겨울");
+			break;
+		case 2 :
+			System.out.println("겨울");
+			break;
+		case 9 :
+			System.out.println("가을");
+			break;
+		case 10 :
+			System.out.println("가을");
+			break;
+		case 11 :
+			System.out.println("가을");
+			break;
+		case 12 :
+			System.out.println("겨울");
+			break;
+		}
+		
+		switch (month) {
+		case 1 :
+		case 2 :
+		case 12 :
+			System.out.println("겨울");
+			break;
+		case 9 :
+		case 10 :
+		case 11 :
+			System.out.println("가을");
+			break;
+		}
+		
+//		변수에 통장 잔액이 만원있음
+//		출금액을 입력받아서 만원보다 높은금액을적으면 "잔액이부족합니다" 출력
+//		"얼마 출금하고 얼마남았습니다." 출력
+//		음수일경우 "정확히 입력해주세요" 출력
+		
+		int atm = 10000;
+		Scanner scan = new Scanner(System.in);
+		System.out.print("입금 : 1, 출금 : 2 -> 선택하세요");
+		int select = scan.nextInt();
+		System.out.print("금액을 입력하세요 :");
+		int input = scan.nextInt();
 		
 		
-		
-		
-		
-		
+		if ( select == 1 ){
+			if (input > 0 ) {
+				atm = atm + input;
+				System.out.println( input + "원 입금되었습니다.\n잔액은" + atm + "원 남았습니다." );
+			} else if (input <= 0) {
+				System.out.println("정확히 입력해주세요.");
+			} 
+		}
+		if ( select == 2 ){
+			if (input > atm ) {
+				System.out.println("잔액이부족합니다.");
+			} else if (input <= 0) {
+				System.out.println("정확히 입력해주세요.");
+			} else {
+				atm = atm - input;
+				System.out.println(input + "원 을 출금하고," + atm + "원 남았습니다.");
+			}
+		}
 		
 	}
 

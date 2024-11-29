@@ -2,7 +2,7 @@ package sec01.exam02;
 
 import java.util.Scanner;
 
-public class Game {
+public class game {
 
 	public static void main(String[] args) {
 //		가위바위보 문제
@@ -10,9 +10,9 @@ public class Game {
 //		컴퓨터는 랜덤으로 가위,바위,보를 뽑아 만들기
 
 //		컴퓨터
-		double com = (Math.random() * (3))+1;
-		int com1 = (int)com;
-				
+		double com = (Math.random() * (3)) + 1;
+		int com1 = (int) com;
+
 //		나
 		Scanner TTT = new Scanner(System.in);
 		String na = TTT.nextLine();
@@ -44,9 +44,9 @@ public class Game {
 				System.out.println("비겼습니다.");
 			}
 		}
-		if(com1 == 1) {
+		if (com1 == 1) {
 			System.out.println("컴퓨터 : 가위");
-		} else if ( com1 == 2 ) {
+		} else if (com1 == 2) {
 			System.out.println("컴퓨터 : 바위");
 		} else {
 			System.out.println("컴퓨터 : 보");
@@ -55,3 +55,4 @@ public class Game {
 	}
 
 }
+ 

@@ -39,6 +39,7 @@ public class ForExam {
 //		for : 반복횟수를 아는경우
 //		while : 반복 횟수를 모르는 경우
 		
+//		===============================
 //		1~100까지 더하기
 //		int sum2 = 0;
 //		for(int e=1; e <= 100; e++) {
@@ -47,13 +48,14 @@ public class ForExam {
 //				System.out.println("sum2 의 값 :" + sum2);
 //		}
 		
-		
+//		===============================
 //		 10 에서부터 1 까지 출력하기
 //		int nn;
 //		for (nn = 10 ; nn > 0 ; nn--) {
 //			System.out.println(nn);
 //		}
 		
+//		===============================
 //		1.1~20까지 짝수만 출력하기
 		int nn2,nn3  ;
 		for (nn2 = 0 ; nn2 <= 20 ; nn2++) {
@@ -63,11 +65,11 @@ public class ForExam {
 		
 		int mod,mod1;
 		for (mod = 0 ; mod <= 20 ; mod++) {
-			if(mod % 2 == 0)//2로나눠서 0이되야 짝수임.
+			if(mod % 2 == 0) //2로나눠서 0이되야 짝수임.
 				System.out.print(mod + " ");
 		}System.out.println();
 		
-		
+//		===============================
 //		2.1~20까지 3의 배수만 출력하기
 		int nn4,nn5,nn6;
 		for (nn4 = 1 ; nn4*3 <= 20 ; nn4++) {
@@ -76,20 +78,43 @@ public class ForExam {
 		}System.out.println();
 		
 		
+//		답 풀이
+//		for (int qqq2 = 1; qqq2 <= 20 ; qqq2 += 3) {
+//			if(qqq2 % 3==0) {
+//				System.out.println(qq2);
+//			}
+//		}
 		
+//		===============================
 //		3.1~5까지 모두출력하면서 홀/짝
 //		1홀
 //		2짝
 		int ghf,ghf1,Wkr,Wkr1;
-		for(Wkr = 1 ; Wkr*2 <= 20 ; Wkr++) {
+		for(Wkr = 0 ; Wkr*2 <= 20 ; Wkr++) {
 			Wkr1 = Wkr * 2;
 			System.out.print(Wkr1 + "(짝수)");
 		}System.out.println();
-		for(ghf = 1 ; ghf*2 < 20 ; ghf++) {
+		for(ghf = 0 ; ghf*2 < 20 ; ghf++) {
 			ghf1 = ghf *2+1;
 			System.out.print(ghf1 + "(홀수)");
 		}System.out.println();
 		
+//		답풀이
+//		for(int q3= 1; q3<5;q3++) {
+//			if(q3%2==0) {
+//				System.out.println(q3 + ": " + "짝수");
+//			}else {
+//				System.out.println(q3 + ": " + "홀수");
+//			}
+//		}
+		
+//		또는 좋은 줄여쓰기 예시
+//		string ea = "홀수";
+//		if(q3 % 2 ==0) {
+//			ea = "짝수"
+//		}System.out.println(q3 + ": " + ea);
+		
+//		===============================
 //		4.1~20까지 홀수의합
 		int fum,fum1,fount;
 		fum1 = 0;
@@ -102,6 +127,15 @@ public class ForExam {
 		System.out.print("홀수의합 :"+fum1);
 		System.out.println();
 		
+//		답풀이
+//		int summ4 = 0;
+//		for(int q4 = 1; q4 <= 20; q4++) {
+//			if (q4%2==1) {
+//				summ4 += q4;
+//			}
+//		}System.out.println("summ4 :"+ summ4);
+		
+//		===============================
 //		5.1~20까지 홀수의 개수
 		int gkq,gkq1;
 		gkq1 = 0;
@@ -111,8 +145,27 @@ public class ForExam {
 			}
 		}System.out.println(gkq1+"개");
 		
+//		답풀이
+//		내 답과 똑같음
 		
+//		===============================
+//		6.1~10까지 옆으로 3개씩 출력
 		
+//		답풀이
+		for (int q=1; q<=10; q++) {
+			System.out.print(q +" ");
+			if (q % 3 == 0 ) {
+				System.out.println();
+			}
+		}System.out.println();
+//		답풀이와 반대
+//		if (q % 3 != 0) {
+//			System.out.print(q+" ");
+//		} else {
+//			System.out.print(q +"\n");
+//		}
+		
+//		===============================
 //		구구단
 //		int m, n;
 //		for (m = 1 ; m < 9 ; m++) {
@@ -121,7 +174,15 @@ public class ForExam {
 //				System.out.println(m + "*" + n + "=" + (m*n) );
 //			}
 //		}
-			
+		
+//		구구단 2단
+		
+		int m;
+		System.out.println("구구단 2단");
+		for (m = 1 ; m < 10 ; m++) {
+			System.out.println( "2 * " + m + " = " + ( 2 * m ) );
+		}
+		
 	}
 
 }

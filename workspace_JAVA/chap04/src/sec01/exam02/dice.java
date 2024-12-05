@@ -1,6 +1,6 @@
 package sec01.exam02;
 
-public class EEEEEEE {
+public class dice {
 
 	public static void main(String[] args) {
 
@@ -31,14 +31,25 @@ public class EEEEEEE {
 		System.out.println();System.out.println();
 
 		
+		boolean k = false;
+		
 //		중복을 제거한 경우의수
 		for(int dice3 = 1; dice3 <=6 ; dice3++) {
 			System.out.println("1번 주사위 :" + dice3);
 			for(int dice4 = 1 ; dice4 <= 6 ; dice4++) {
-				if(dice3 == dice4) {
+				
+				if(dice3 > dice4) {
 					continue;
 				}
-				System.out.println("2번주사위 :" + dice4);
+				System.out.println("2번 주사위:"+dice4);
+				if(dice3 == dice4) {
+					if(dice3 > dice4) {
+						
+					}continue;
+					
+				}
+				
+				
 			}
 		}
 	

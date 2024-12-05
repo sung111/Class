@@ -47,6 +47,18 @@ public class QQQ {
 		System.out.println();
 
 		int max2 = 0;
+//		------------------------------
+//		답풀이
+		System.out.println("3번문제 답풀이");
+		int max5 = Integer.MIN_VALUE;
+		System.out.println(max5);
+		for(int i = 0 ; i <park.length; i++){
+			if(max5 < park[i]) {
+				max5 = park[i];
+			}
+		}
+		System.out.println("답풀이 최댓값 :" + max5);
+//		------------------------------
 //		[3,4,7,5,1,4,6]
 //		4.두번째 큰수 구하기
 //		max보다 작으면서 배열에서 큰값.
@@ -239,9 +251,79 @@ public class QQQ {
 		
 		
 		
+		int[] class1 = new int[20];
+		int[] class2 = new int[20];
+		int[] class3 = new int[20];
+		int[] class4 = new int[20];
 		
+		int[][] 천안 = new int[4][20];
+		System.out.println("천안 : "+ 천안);
+		System.out.println("천안[0] : "+ 천안[0]);
+		System.out.println("천안[0][0] : "+ 천안[0][0]);
+		System.out.println(천안.length);
+		
+		//서로다른 크기를 가지는 2차원 배열
+		int[][] test = {
+					{1,2,3},
+					{1,2,3, 4},
+					{78}
+					};
+		System.out.println(test[1][3]);
+		System.out.println("tets.length :" + test.length);
+		System.out.println("tets[0].length :" + test[0].length);
+		System.out.println("tets[1].length :" + test[1].length);
+		System.out.println("tets[1].length :" + test[1].length);
+		
+//		int[][] 수원 = new int [4][20];
+//		int[][] 서울 = new int [4][20];
+		
+//		int[][][] 휴먼 = new int[3][4][20]; 
+		
+		//가상 달력
+		//총 12개월에 모든달은 30일로 고정
+		//한달은 1~30
+		//모든날짜를 채워넣기
+		//따로 모든 or 11월 출력
+		int[] month = new int [12];
+		int[][] month1 = new int[12][30];
+				
+//		for(int i = 0 ; i < month.length; i++) {
+//			
+//		}
+		for(int i = 0 ; i < month1.length; i++) {
+			for(int j = 0; j < month1[i].length ; j++) {
+				month1[i][j] = j + 1;
+			}
+		}
+	
+//		for(int i = 0 ; i < month.length ; i++) {  //월출력
+//			System.out.println(month[i] + "월");
+//		}
+		for(int i = 0 ; i < month1.length ; i++) {
+			System.out.println(month[i] + "월");
+			for(int j = 0; j < month1[i].length ; j++) {
+				System.out.println("i :" + (i +1) +", j :"+ month1[i][j]);
+			}
+		}
 		
 
+		//4개짜리 배열을 깊은복사
+		
+		String[] name1 = {"김", "이", "박", "최"};
+		//name1과 정확히 동일한 name2를만드세요
+//		String[] name2 = name1; 얕은복사 - 주소값만따옴
+		String[] name2 = new String[name1.length];
+		
+		
+		for(int i = 0 ; i < name1.length ; i++) {
+			name2[i] = name1[i];
+		}
+		
+		
+		
+		
+		
+		
 	}
 
 }

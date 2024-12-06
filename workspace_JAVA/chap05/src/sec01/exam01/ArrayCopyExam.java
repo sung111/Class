@@ -83,7 +83,7 @@ public class ArrayCopyExam {
 		}
 		
 		
-//		문제 5번
+//		223p 문제 5번
 //		합
 //		평균 : 합/ 개수
 //		최대값

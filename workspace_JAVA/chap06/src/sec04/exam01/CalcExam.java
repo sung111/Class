@@ -25,10 +25,13 @@ public class CalcExam {
 		
 		d[0] = new Calc();
 		
+		
+		Calc t1 = new Calc();
+		Calc t2 = new Calc();
 		Calc[] t ={
-					new Calc(),
-					new Calc()
-					};
+					t1,t2
+				};
+		
 		System.out.println(t[0]);
 		int[] f = {1,2,3,4,5};
 		int f1 = calc.sum1(f);

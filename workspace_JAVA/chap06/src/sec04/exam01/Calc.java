@@ -14,7 +14,7 @@ public class Calc {
 	void powerOn(){
 		isOn = true;
 		System.out.println("전원을 켭니다.");
-	}
+	} 
 	void powerOff() {
 		isOn = false;
 		System.out.println("전원을 끕니다.");

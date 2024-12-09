@@ -155,18 +155,18 @@ public class QQQ {
 		
 //		--------------------답풀이---------------------
 
-		for(int i=0; i<arr2.length; i++) {
-			int start = 97;
-			int end = 122;
-			int random = ( (int)(Math.random()*(end - start + 1)) ) + start;
-			char temp = (char)random;
-			arr2[i] = ""+temp;
-		}
-		// 출력
-		for(int i=0; i<arr2.length; i++) {
-			System.out.print(arr2[i]);
-		}
-		System.out.println();		
+//		for(int i=0; i<arr2.length; i++) {
+//			int start = 97;
+//			int end = 122;
+//			int random = ( (int)(Math.random()*(end - start + 1)) ) + start;
+//			char temp = (char)random;
+//			arr2[i] = ""+temp;
+//		}
+//		// 출력
+//		for(int i=0; i<arr2.length; i++) {
+//			System.out.print(arr2[i]);
+//		}
+//		System.out.println();		
 //		-----------------------------------------
 
 		
@@ -415,14 +415,14 @@ public class QQQ {
 				}
 			} while(flag);
 		}
-		System.out.println("--로또 번호--최민수--------------");
+		System.out.println("--로또 번호--박혜성--------------");
 		for(int i=0; i<lotto.length; i++) {
 			if(i != 0) {
 				System.out.print(","+ lotto[i]);
 			} else {
 				System.out.print(lotto[i]);
 			}
-		}		
+		}System.out.println();
 		
 //		---------------------------------
 

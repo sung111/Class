@@ -86,6 +86,10 @@ public class Kimbob {
 	 * @return void
 	 * 
 	 **/
+	void menuPlus(String a,int p) {
+		this.menu.add(a);
+		this.price.add(p);
+	}
 	
 	/**
 	 * 전체메뉴와 가격 확인
@@ -94,5 +98,12 @@ public class Kimbob {
 	 * @param
 	 * @return void
 	*/
+	void menuList() {
+		for (int i=0; i < this.menu.size(); i++) {
+			System.out.println(this.menu.get(i));
+		}
+	}
+	
+	
 	
 }

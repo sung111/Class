@@ -11,16 +11,17 @@ public class caffe {
 		dkap = 3000,
 		zkvp = 4000,
 		qhr = 3500,
-		shr = 3000;
+		shr = 3000,
+		sum = 0;
 		
 		boolean end = true;
 		boolean end1 = true;
 		
 		
 		do {
-			System.out.println("=======================");
-			System.out.println(" |1:주문하기| |2:종료하기| ");
-			System.out.println("=======================");
+			System.out.println("==================================");
+			System.out.println(" |1:주문하기| |2:종료하기|3.결제금액확인|");
+			System.out.println("==================================");
 			int s1 = scan.nextInt();
 			if(s1 == 1) {
 				System.out.println("메뉴를 골라주세요.");
@@ -56,8 +57,9 @@ public class caffe {
 								int s4 = scan.nextInt();
 								if(s4 == 1) {
 									System.out.println("가격은 "+ (s3 * dkap) +"원 입니다");
-									end=false;
-									end1=false;
+									sum = sum+s3 * dkap;
+//									end=false;
+//									end1=false;
 									break;
 								}else {
 									System.out.println("처음으로 돌아갑니다.");
@@ -87,8 +89,9 @@ public class caffe {
 								int s4 = scan.nextInt();
 								if(s4 == 1) {
 									System.out.println("가격은 "+ (s3 * zkvp) +"원 입니다");
-									end=false;
-									end1=false;
+									sum = sum + s3 * zkvp;
+//									end=false;
+//									end1=false;
 									break;
 								}else {
 									System.out.println("처음으로 돌아갑니다.");
@@ -134,8 +137,9 @@ public class caffe {
 								int s4 = scan.nextInt();
 								if(s4 == 1) {
 									System.out.println("가격은 "+ (s3 * qhr) +"원 입니다");
-									end=false;
-									end1=false;
+									sum = sum + s3 * qhr;
+//									end=false;
+//									end1=false;
 									break;
 								}else {
 									System.out.println("처음으로 돌아갑니다.");
@@ -166,8 +170,9 @@ public class caffe {
 								int s4 = scan.nextInt();
 								if(s4 == 1) {
 									System.out.println("가격은 "+ (s3 * shr) +"원 입니다");
-									end=false;
-									end1=false;
+									sum = sum + s3 * shr;
+//									end=false;
+//									end1=false;
 									break;
 								}else {
 									System.out.println("처음으로 돌아갑니다.");
@@ -205,11 +210,24 @@ public class caffe {
 				System.out.println("프로그램을 종료합니다.");
 				end = false;
 				break;
+			}else if(s1 == 3) {
+				System.out.println("총 결제 금액은" + sum + "원 입니다.");
+				System.out.println("1.계산하기|2.취소하기");
+				int s5 = scan.nextInt();
+				if(s5 == 1) {
+					System.out.println(sum +"원 계산을 완료했습니다.");
+					break;
+				}else if(s5==2) {
+					System.out.println("프로그램을 종료합니다.");
+					end=false;
+					end1=false;
+					break;
+				}else {
+					System.out.println("메뉴내에서 선택바랍니다.");
+				}
 			}else {
-				System.out.println("1,2번중에서 선택해주세요");
+				System.out.println("메뉴내에서 선택바랍니다.");
 			}
-			
-			
 			
 		}while(end);
 		

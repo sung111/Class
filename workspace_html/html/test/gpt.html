@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>다양한 입력 타입 예제</title>
+</head>
+<body>
+    <form action="/submit-form" method="post">
+        <!-- 텍스트 입력 -->
+        <label for="username">사용자 이름:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <!-- 비밀번호 입력 -->
+        <label for="pwd">비밀번호:</label>
+        <input type="password" id="pwd" name="pwd" required><br><br>
+
+        <!-- 이메일 입력 -->
+        <label for="email">이메일:</label>
+        <input type="email" id="email" name="email"><br><br>
+
+        <!-- 숫자 입력 -->
+        <label for="quantity">수량:</label>
+        <input type="number" id="quantity" name="quantity" min="1" max="10"><br><br>
+
+        <!-- 날짜 선택 -->
+        <label for="birthday">생일:</label>
+        <input type="date" id="birthday" name="birthday"><br><br>
+
+        <!-- 라디오 버튼 -->
+        <p>성별:</p>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">남성</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">여성</label><br><br>
+
+        <!-- 체크박스 -->
+        <p>관심사:</p>
+        <input type="checkbox" id="sports" name="interest" value="sports">
+        <label for="sports">스포츠</label><br>
+        <input type="checkbox" id="music" name="interest" value="music">
+        <label for="music">음악 감상</label><br><br>
+
+        <!-- 파일 업로드 -->
+        <label for="resume">이력서 업로드:</label>
+        <input type="file" id="resume" name="resume"><br><br>
+
+        <!-- 색상 선택 -->
+        <label for="favcolor">좋아하는 색상:</label>
+        <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
+
+        <!-- 범위 슬라이더 -->
+        <label for="volume">볼륨:</label>
+        <input type="range" id="volume" name="volume" min="0" max="100"><br><br>
+
+        <!-- 제출 버튼 -->
+        <input type="submit" value="제출">
+    </form>
+</body>
+</html>

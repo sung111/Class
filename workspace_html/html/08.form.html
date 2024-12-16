@@ -3,11 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>form title yeaheeeee</title>
 </head>
 <body>
-  text : <input type="text"><br>
-  password : <input type="password" height="100">
-  <button>로그인</button>
+
+  <form method="get" action="">
+    text : <input type="text"><br>
+    text(value) : <input type="text" value="yeaheheh"><br>
+    text(placeholder) : <input type="text" placeholder="아이디" readonly="readonly"><br>
+
+    password : <input type="password" placeholder="your password" >
+    <button>로그인</button><br />
+
+    radio
+    <input type="radio" name="gender" value="male" checked="checked"> 남자
+    <input type="radio" name="gender" value="female"> 여자
+    <br>
+
+    checkbox:
+    <input type="checkbox" value="1" checked="checked" disabled="disabled">굳
+    <input type="checkbox" value="2">예아
+    <input type="checkbox" value="3">오에 <br><br>
+
+    <input type="file"> <br>
+    <input type="reset" value="눌러보도록"> <br>
+    검색 : <input type="text" name="serch"> <br>
+    submit : <input type="submit" value="전송ㅋ"> <br>
+
+    hidden : <input type="hidden" name="secret" value="1234"><br>
+
+    date : <input type="date" value="2024-12-03"><br>
+
+    color : <input type="color"><br>
+
+    number : <input type="number" placeholder="숫자만 ㄱㄱ" max="3"><br>
+
+    range : <input type="range" name="ran"> <br>
+
+    input button : <input type="button" name="btn" value=" 뚜뚜뚜뚜뚜뚜 "> <br>
+    <button type="button">button tag</button><br>
+
+    <a href="http://www.naver.com" target="_blank">
+      <button type="button" >gd</button>
+    </a><br><br>
+
+    <textarea rows="10" cols="100" name="textarea">ff</textarea> <br><br>
+
+    <select name="lunch" multiple="multiple" size="10">
+      <option value="1">한식</option>
+      <option value="2" selected="selected">중식</option>
+      <option value="3">양식</option>
+      <option value="4">분식</option>
+      <option value="5">1식</option>
+      <option value="6">2식</option>
+      <option value="7">3식</option>
+      <option value="8">4식</option>
+      <option value="9">5식</option>
+      
+    </select>
+
+    <br><br>
+    <input type="checkbox" id="chk"> <label for="chk">선택</label>
+    <br><br>
+    <label for="chk2">
+      <button id="chk2"><input type="checkbox" id="chk2"> 선택 </button>
+    </label>
+    <br><br>
+
+    <fieldset>내ㅛㅇ쓰
+      <legend>제목쓰</legend>
+    </fieldset><br><br>
+
+
+
+  </form>
+
+  <form method="get" action="https://search.naver.com/search.naver">
+    네이버검색 : <input type="text" name="query" placeholder="검색어를 입력하세요">
+    <input type="submit" value="네이버검색">
+  </form>
+
+  <form method="get" action="https://www.google.com/search">
+    google search : <input type="text" name="q" placeholder="google 검색 또는 URL 입력">
+    <input type="submit" value="구글검색">
+  </form>
+
 </body>
 </html>

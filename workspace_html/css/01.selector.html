@@ -1,68 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>css 인라인 선언</title>
   <style>
     /* css 주석 */
-    
+
     /* tag 선택자 */
     h3 {
-      background:skyblue;
+      background: skyblue;
     }
-    li{
+
+    li {
       color: blue;
       font-size: 30px;
     }
-    #CC22{
+
+    #CC22 {
       color: red;
       background: green;
     }
-    
-    .c1{
+
+    .c1 {
       background: black;
     }
-    .bigText{
+
+    .bigText {
       font-size: 40px;
     }
+
     #div1 {
       background: yellow
     }
-    #div1 :hover{
+
+    #div1 :hover {
       background: aqua;
     }
-    .text1:focus{
-      background:yellow
+
+    .text1:focus {
+      background: yellow
     }
 
     /* 누군가의 자식요소 중에서 첫번째 */
-    li:first-child{
+    li:first-child {
       color: red;
     }
-    ul:first-child{
+
+    ul:first-child {
       font-size: 40px;
     }
 
     /* 실제 등장하는 요소중 첫번째 */
-    ul:first-of-type{
+    ul:first-of-type {
       text-decoration: underline;
     }
 
-    tr:nth-child(2n-1){
+    tr:nth-child(2n-1) {
       background: green;
     }
 
-    h1:after{
-      content:"AFTER";
+    h1:after {
+      content: "AFTER";
       font-size: 10px;
-      color:red;
+      color: red;
     }
 
+    body {
+      margin: 0px;
+    }
+
+    /* * {
+      margin: 0;
+      padding: 0;
+    } */
+
+    #tb1,
+    .td,
+    h6 {
+      border: 1px solid red;
+    }
+
+    /* 바로아래 자식요소 */
+    #ol1 > li{
+      color : black;
+    }
+
+    /* 띄어쓰기 : 자손들 모두 */
+    #ol1 li{
+      font-size: 20px;
+    }
+
+    [href]{
+      color : red;
+    }
+
+    [id=s1]{
+      font-size: 40;;
+    }
+
+    /* 값 중 단어로 존재하는것을 찾아서 선택 */
+    [class ~= c1]
+
+
+    a:not(href ^= https){
+      font-size: 40px;
+    }
+
+    ::selection{
+      background-color: green;
+    }
   </style>
 
 
 </head>
+
 <body>
   <h3> h3 자리 </h3>
   <ul>
@@ -125,6 +178,40 @@
     </tr>
   </table>
 
-  <h1> before after </h1>
+  <h1> before after </h1><br>
+
+  <table id="tb1">
+    <tr>
+      <td class="td">1</td>
+      <td class="td">
+        <h6>h6</h6>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+  <hr><br>
+  <ol id="ol1">
+    <li>1</li>
+    <li>
+      <ul>
+        <li>2-1</li>
+        <li>2-2</li>
+        <li>2-3</li>
+      </ul>
+    </li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+  </ol>
+
+<br>
+<a href="https://www.naver.com">네이버</a>
+
+
+
+
+
 </body>
+
 </html>

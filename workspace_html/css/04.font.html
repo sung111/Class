@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    @font-face {
+      font-family: 'NoonnuBasicGothicRegular';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noon-2410@1.0/NoonnuBasicGothicRegular.woff2') format('woff2');
+      font-weight: normal;
+      font-style: normal;
+    }
+    
+    #p1{
+      color: red;
+      /* text-decoration: underline; */
+      text-decoration: line-through;
+      text-align: center;
+      font-family: 'NoonnuBasicGothicRegular';
+      font-size: 100px;
+    }
+    input[type=checkbox]:checked + span{
+      text-decoration: line-through;
+      color: gray;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <p id="p1">
+    sdesdfesdfasdf
+    <div>
+      child div
+    </div>
+  </p>
+
+  <div>
+    <input type="checkbox"> <span> 복습 </span><br>
+    <input type="checkbox"> <span> 예습 </span><br>
+    <input type="checkbox"> <span> zuzu </span><br>
+  </div>
+
+</body>
+</html>

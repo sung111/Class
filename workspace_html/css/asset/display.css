@@ -1,0 +1,37 @@
+.block{
+  border: 1px solid greenyellow;
+  height: 50px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.inline{
+  border: 1px solid blueviolet;
+  height: 50px;
+  width: 100px;
+
+  margin: 50px;
+
+  padding: 30px;
+}
+
+.bg_blue{
+  background-color: blue;
+  color: white;
+}
+
+.parent{
+  border: 1px dotted rgb(255, 0, 255);
+  width: 350px;
+  /* width: 100%; */
+}
+.parent > div{
+  border: 1px dashed goldenrod;
+  height: 100px;
+  width: 150px;
+  display: inline-block;
+  box-sizing: border-box;
+
+  /* inline, inline-block 에만적용됨 */
+  vertical-align: top;
+}

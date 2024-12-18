@@ -78,7 +78,7 @@ h1{
   overflow: hidden;
   width: 50vw;
 
-  /* overflow시 ... 자동생성 */
+  /* overflow시 '...' 자동생성 */
   text-overflow: ellipsis;
 }
 .text{

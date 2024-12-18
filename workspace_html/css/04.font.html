@@ -3,30 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <style>
-
-    @font-face {
-      font-family: 'NoonnuBasicGothicRegular';
-      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noon-2410@1.0/NoonnuBasicGothicRegular.woff2') format('woff2');
-      font-weight: normal;
-      font-style: normal;
-    }
-    
-    #p1{
-      color: red;
-      /* text-decoration: underline; */
-      text-decoration: line-through;
-      text-align: center;
-      font-family: 'NoonnuBasicGothicRegular';
-      font-size: 100px;
-    }
-    input[type=checkbox]:checked + span{
-      text-decoration: line-through;
-      color: gray;
-    }
-    
-  </style>
+  <title>font test</title>
+  <link rel="stylesheet" href="asset/font.css">
 </head>
 
 <body>
@@ -42,6 +20,61 @@
     <input type="checkbox"> <span> 예습 </span><br>
     <input type="checkbox"> <span> zuzu </span><br>
   </div>
+
+  <div class="size">
+    <strong>font-size</strong> fake
+  </div>
+
+  <h1>font-size</h1>
+
+  <div class="style">
+    font-style
+  </div>
+  <em>font-style</em>
+  <!-- 100 ~ 900을 넘어가면 기본두께 -->
+  <div class="fw-100">100</div>
+  <div class="fw-500">500</div>
+  <div class="fw-bold">500</div>
+  <div class="fw-900">900</div>
+  <div class="fw-2000">2000</div>
+
+  <div class="align-right">
+    dddddddddddddd
+  </div>
+  <div class="align-center">
+    zzzzzzzzzzzzzzzzzzzzz
+  </div>
+  <div class="align-justify" style="border: 1px solid red;">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus excepturi, at iusto, voluptates reprehenderit, omnis fugit temporibus totam sed reiciendis laborum eligendi provident. Eos earum eligendi est et dolore maxime. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vitae distinctio, quia quas ut, officia ad alias doloribus eligendi nostrum temporibus minus reiciendis et expedita libero doloremque nulla inventore recusandae! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque, veniam similique maiores minima quasi itaque! Sit maiores error vel, in ut cum dolor! Voluptates ut iusto quasi veniam tenetur, assumenda commodi ipsum voluptatem dolorem vitae ea quas distinctio ipsam ducimus ullam natus deleniti officia ipsa fugiat corporis earum dicta enim tempore? Mollitia distinctio magni iusto fugiat nostrum porro accusantium quos at, adipisci eaque doloribus perspiciatis vitae doloremque, deleniti quas est ut nam sunt obcaecati omnis hic. Sapiente tempora facere atque accusamus sequi neque, dolores omnis tenetur quod fugiat nesciunt eos vitae. Facere voluptatibus numquam tempora animi cum sint quae iste.
+  </div>
+  <a href="ds" class="align-right" style="border: 1px solid red;"> A tag  </a>
+  <div style="border: 1px solid red;" class="align-center">
+    <a href="ds" class="align-right" style="border: 1px solid red;"> A tag  </a>
+  </div>
+  <div class="spacing">
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ullam ex animi commodi, delectus consectetur consequatur sed recusandae necessitatibus unde ab culpa aliquid eum minima quam! Quisquam minima, placeat totam aspernatur excepturi exercitationem voluptate quae facere modi nostrum cum facilis molestias ab officiis cupiditate reiciendis minus! Error laudantium ipsam cum fugiat.
+  </div>
+  <div class="lh">
+    첫줄 <br>
+    두줄
+  </div>
+  <div class="middle">
+    세로방향 중앙
+  </div>
+  <div class="nowrap" title="올ㅋ">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, aliquam? Nemo deserunt beatae eaque quod? Quidem sunt in perferendis sed, enim nesciunt quam dolor obcaecati voluptates quasi, incidunt quos maxime illum blanditiis laudantium. Impedit veritatis alias sint cum unde hic, blanditiis sit, eius quia, optio a dolores deserunt similique fugit?
+  </div>
+
+  <div class="text word-wrap">
+    fdsafsafsfasdfsddddddddddddddddadfsdf ddsdffdsdddddddddsfxcvzdrsdfsdfsdfsdfrere ddsdffdsdddddddddsfxcvzdrsdfsdfsdfsdfrere12312312312312312312123123123
+    asdasd
+    asdasd
+  </div>
+  <div class="text word-break">
+    fdsafsafsfasdfsddddddddddddddddadfsdf ddsdffdsdddddddddsfxcvzdrsdfsdfsdfsdfrere ddsdffdsdddddddddsfxcvzdrsdfsdfsdfsdfrere12312312312312312312123123123
+    sdfsdfsdf
+  </div>
+
 
 </body>
 </html>

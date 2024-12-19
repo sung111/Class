@@ -1,0 +1,24 @@
+body{
+  margin: 0;
+}
+header{
+  background-image: url(https://html5up.net/uploads/demos/tessellate/images/header.jpg);
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  line-height: 150px;
+  text-align: center;
+}
+h1{
+  text-align: center;
+  color: white;
+  font-weight: 300;
+}
+p{
+  text-align: center;
+  height: auto;
+  color: white;
+}
+a{
+  border-bottom: 1px dotted white;
+}

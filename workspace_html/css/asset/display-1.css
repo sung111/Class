@@ -1,0 +1,39 @@
+.ul1{
+  list-style: none;
+  padding: 0;
+  background-color: aqua;
+  width: 20%;
+}
+
+.ul1>li>a{
+  display: block;
+  padding: 15px;
+}
+
+.ul1>li>a:hover{
+  color: white;
+  background-color: blue;
+  /* margin: auto; */
+}
+/* ----------------------------- */
+.ul2{
+  list-style: none;
+  padding: 0;
+  /* background-color: aqua; */
+  background-color: aqua;
+  text-align: center;
+}
+
+.ul2>li{
+  display: inline-block;
+}
+
+.ul2>li>a{
+  display: inline-block;
+  padding: 10px;
+  /* padding: 20%; */
+}
+.ul2>li>a:hover{
+  color: white;
+  background-color: blue;
+}

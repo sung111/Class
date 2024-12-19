@@ -1,0 +1,32 @@
+body{
+  background-color: rgb(206, 200, 200);
+}
+.back{
+  text-align: center;
+  display: inline-block;
+  width: 49%;
+  /* justify-content: center; */
+}
+.back>img{
+  text-align: center;
+  display: inline-block;
+  /* width: 50vw; */
+  height: 49vh;
+}
+.pt{
+  display: inline-block;
+  height: 50vh;
+  
+  /* width: 50vw; */
+  /* box-sizing: border-box; */
+  
+}
+
+.pt1{
+  background-color: white;
+  width: 300px;
+  font-size: 17px;
+  padding: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}

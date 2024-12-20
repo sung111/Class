@@ -1,27 +1,58 @@
-
-.body{
-  border: 1px solid red;
+.top{
+  text-align: center;
 }
-.layoutleft, .layoutright{
+.left, .right {
   border: 1px solid red;
   display: inline-block;
-  width: 48%;
-  min-width: 450px;
+  width: 40%;
+  justify-content: center;
+  text-align: left;
+  box-sizing: border-box;
+  vertical-align: top;
+}
+.left{
+  min-width: 350px;
+  max-width: 400px;
+  margin-right: 30px;
+}
+.right{
+  box-sizing: border-box;
+  min-width: 500px;
+  max-width: 400px;
+  max-height: 800px;
+}
+.h1 {
+  font-size: 20px;
 }
 
-h1{
-  font-size: 40px;
-  font-weight: 900;
-}
-.leftup p{
+.p1{
   font-size: 18px;
+  margin-bottom: 50px;
+}
+img{
+  width: 100%;
+}
+.p2{
+  font-size: 15px;
+  border-left: 5px solid rgba(86, 86, 233, 0.993);
+  margin-left: 3px;
+}
+.p2>p{
+  margin-left: 15px;
+}
+.lefttop, .leftbot{
+  margin-left: 15px;
 }
 
-.leftdown img{
-  height: 230px;
-  margin-top: 30px;
+
+
+
+.righttop video{
+  width: 100%;
+  
 }
-.leftdown p{
-  font-size: 18px;
-  border-left: 5px solid rgb(78, 78, 180);
+.rightdown p{
+  margin: 30px 60px;
+  padding: 30px;
+  font-size: 17px;
 }

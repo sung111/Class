@@ -1,0 +1,35 @@
+.top{
+  height: 100wh;
+  border: 1px solid red;
+  position: relative;
+}
+.p1{
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  top: 0px;
+  left: 55%;
+  height: 100%;
+  text-align: center;
+}
+
+.pp{
+  position: absolute;
+  top: 25%;
+}
+.pp{
+  font-size: 20px;
+}
+.p3{
+  font-size: 25px;
+  font-weight: 900;
+}
+.p4{
+  font-size: 18px;
+}
+.p5{
+  text-decoration: underline;
+}
+.p5:hover{
+  cursor: pointer;
+}

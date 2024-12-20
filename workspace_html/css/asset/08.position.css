@@ -1,0 +1,133 @@
+body{
+  height: 1500px
+}
+div{
+  border: 1px solid red;
+}
+
+.parent{
+  width: 100px;
+  margin: 20px;
+  background: green;
+  color: white;
+}
+.child{
+  background: rgba(0, 0, 255, 0.5);
+  /* width: 1000px; */
+}
+.relative{
+  position: relative;
+  top: 30px;
+  left: 100px;
+}
+.absolute{
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+.absolute-bot{
+  position: absolute;
+  right: 10px;
+}
+
+.fixed{
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+
+  position: fixed;
+  right: 5px;
+  bottom: 5px;
+}
+
+/* 메뉴가 창 상단에 고정됨  */
+.sticky{
+  position: sticky;
+  top: 20px;
+}
+
+.z1{
+  background-color: hotpink;
+  
+  top: 20px;
+  left: -20px;
+  /* z-index: 99; */
+}
+.z2{
+  background-color: blue;
+
+  top: 13px;
+  left: 0px;
+}
+.z3{
+  background-color: red;
+
+  top: 5px;
+  left: 0px;
+
+  /* z-index: 99; */
+}
+.z1:hover{
+  z-index: 99;
+}
+
+
+
+
+
+.wk{
+  width: 300px;
+  background-color: blue;
+  color: antiquewhite;
+  text-align: center;
+}
+.wk:hover .wk1{
+  display: block;
+}
+.wk1{
+  display: none;
+  height: 30px;
+}
+.wk1:hover{
+  background-color: blueviolet;
+  
+}
+
+/* .menu{
+  width: 200px;
+  margin: 50px;
+  text-align: center;
+  background-color: yellow;
+}
+.menu:hover{
+  background: skyblue;
+}
+.menu:hover .sub1{
+  display: block;
+}
+.sub1{
+  display: none;
+  background-color: yellow;
+  height: 100px;
+}
+.sub1:hover{
+  background-color: skyblue;
+} */
+
+
+
+
+
+
+.p1{
+  border: 1px solid red;
+  width: 200px;
+  height: 50px;
+}
+.p2{
+
+}
+
+
+

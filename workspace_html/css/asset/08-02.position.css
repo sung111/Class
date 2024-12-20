@@ -1,0 +1,48 @@
+.none{
+  height: 100vh;
+  width: 29%;
+  display: inline-block;
+  vertical-align: top;
+}
+.pu{
+  display: inline-block;
+  height: 100vh;
+  width: 70%;
+  background-color: rgb(146, 76, 192);
+}
+
+.glass{
+  position: absolute;
+  top: 10%;
+}
+
+.pp{
+  text-align: right;
+  background-color: white;
+  width: 300px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  padding: 30px;
+  color: rgb(146, 76, 192);
+}
+.p1{
+  font-size: 30px;
+  margin-top: 60px;
+}
+.p2{
+  font-size: 45px;
+  font-weight: 900;
+  margin-top: -20px;
+  margin-bottom: -20px;
+}
+.p3{
+  font-size: 18px;
+  margin-bottom: 60px;
+}
+a:link{
+  color: rgb(146, 76, 192);
+}
+a:visited {
+  color : rgb(146, 76, 192);
+}

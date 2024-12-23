@@ -1,0 +1,42 @@
+.article{
+  border: 1px solid red;
+}
+.box{
+  border: 1px solid red;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+
+.box.left{
+  border: 1px solid blue;
+  float:left;
+}
+.box.right{
+  float: right;
+}
+.clearfix::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+.homepage{
+  border: 1px solid red;
+  margin: 10px;
+  text-align: center;
+}
+.homepage .menu{
+  border: 1px solid blue;
+  width: 200px;
+  float: left
+}
+.homepage .mypage{
+  border: 1px solid blue;
+  width: 200px;
+  float: right;
+}
+.homepage .logo{
+  border: 1px solid rebeccapurple;
+  width: 200px;
+  display: inline-block;
+}

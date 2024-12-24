@@ -1,0 +1,43 @@
+.one, .two, .three, .four{
+  border: 1px solid red;
+  
+}
+.top{
+  display: flex;
+  border: 1px solid red;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+.one, .two, .three, .four{
+  /* justify-content: space-around; */
+  background-repeat: no-repeat;
+  background-size: 400%;
+  height: 300px;
+  width: 80px;
+  margin: 10px;
+  border-radius: 50px;
+  /* white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis; */
+}
+
+.one{
+  background-image: url(https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt98532c54a724484a/6668d40fbf9bc579aa72e698/4603922-May-flowers.jpg?q=70&width=3840&auto=webp);
+  position: relative;
+  
+}
+.one div{
+  position: absolute;
+  bottom: 0px;
+}
+.two{
+  background-image: url(https://i.ytimg.com/vi/JPK9-uV-ujk/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGBMgVCh_MA8=&rs=AOn4CLAVQ9Tfm0JDLUmh_kRr15jdHj_AEw);
+}
+.three{
+  background-image: url(https://cdn.ardentnews.co.kr/news/photo/202409/4306_20112_4315.jpg);
+}
+.four{
+  background-image: url(https://img.freepik.com/free-photo/beautiful-outdoor-nature-landscape-with-alone-tree-snow-winter-weather-season_74190-9956.jpg);
+
+}

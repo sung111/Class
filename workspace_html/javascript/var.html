@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    console.log("hello world");
+
+    var a = 10;
+    console.log("a : "+ a );
+    b = 11;
+    console.log("b : ", b );
+
+    let c = 12;
+    console.log(c);
+
+    const d = 13;
+    console.error(d);
+
+    let e;
+    console.log(e);
+    console.log(""+e);
+    
+    // console.log(f); //error 발생시 js 중단
+    // console.log("hello");
+    var a = 20;
+    b=21;
+    console.log(a,b);
+
+    // let c = 22;
+    // const d = 23;
+    c=22;
+    console.log(c);
+
+    // d=23;
+    // console.log(d);
+
+    c = "문자";
+    c = '문자';
+    console.log(c);
+    // let g:number = 6;
+
+    console.log(typeof c);
+    console.log(typeof d,d);
+    c="13";
+    console.log(c == d);
+    console.log(c != d);
+    console.log(c === d);
+    console.log(c !== d);
+
+    let a1,
+        a2,
+        a3;
+    if( a1 == undefined){
+      console.log("a1의값을 넣으세 :", typeof a1)
+    }
+    if(typeof a1 == "undefined"){
+      console.log("a1의 값을 넣도록")
+    }
+
+    const g = "12.34";
+    console.log(1, g+5);
+    console.log(2, Number(g)+5);
+    console.log(2, parseInt(g)+5);
+
+    const h = "문짜"
+    console.log(h*5);
+
+    console.log(isNaN(h));
+
+    console.log(5/0);
+
+    alert("alert\n글씨");
+    const result = confirm("진짜? 할거임?");
+    console.log(result); 
+    const result2 = prompt("메시지\n다음줄") 
+    console.log(result2);
+    
+    console.log("이전");
+    alert("alert\n글씨 ");
+    console.log("이후");
+    
+    console.log("입력한 글씨는 " + result2 + "입니당");
+    console.log(`입력한 글씨는 ${result2} 임다`);
+
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

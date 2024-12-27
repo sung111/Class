@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    let arr = [];
+    let arr2 = new Array();
+
+    arr = [1, 2, 3];
+    arr = new Array(1, 2, 3);
+
+    console.log("arr[0]", arr[0]);
+    arr[1] = 20;
+    console.log("arr[1]", arr[1]);
+
+    console.log("arr", arr);
+    console.log("arr : " + arr);
+
+    arr[10] = 10;
+    console.log("arr", arr);
+    console.log("arr[20]", arr[20]);
+
+    arr["name"] = "이름쓰";
+    console.log("arr", arr);
+    console.log('arr["name"]', arr["name"]);
+
+    console.log("arr.length", arr.length)
+
+    const str = "휴먼교육센터";
+    console.log("str[1]", str[1]);
+    console.log("str.length", str.length);
+
+    for (var i = 0; i < str.length; i++) {
+      console.log(str[i]);
+    }
+    for (i = 0; i < arr.length; i++) {
+      console.log(arr[i])
+    }
+    console.log(i)
+
+    let 액션 = ['헬다이버2', '엘든링', '피펑싸펑', '콜옵'];
+    let 롤플레잉 = ['발더3', '호그와트', '스토커2', '팰월드'];
+    let 전략 = ['발트로', '토탈워', '메타포', '스텔라리스'];
+
+    let 스팀 = [액션, 롤플레잉, 전략];
+    // console.log(스팀);
+    for (i = 0; i < 스팀.length; i++) {
+      for (j = 0; j < 스팀[i].length; j++) {
+        console.log(스팀[i][j]);
+      }
+    }
+    console.log("----------------------");
+    
+    let arr1 = [10, 20, 30];
+    arr["name"] = "gt";
+    arr[10] = 100;
+    console.log(arr);
+    for(let i in arr){
+      console.log('i :',i);
+      console.log('arr[i] :',arr[i]);
+    }
+    console.log("----------------------");
+    // of앞에 변수에 현재의 값을 저장
+    // java의 향상된 for문
+    // of는 전통for문으로 0부터 length 이전까지반복
+    let cnt = 0;
+    for(let obj of arr){
+      console.log('obj :',obj,cnt++);
+    }
+
+    arr = [];
+    arr = [1,3,2,6,5,4];
+    // java arraylist 처럼 사용
+    //마지막에 넣기
+    arr.push(10);
+    console.log(arr);
+    // 맨첨에넣기
+    arr.unshift(11);
+    console.log(arr);
+    
+    // 맨뒤삭제
+    let pop = arr.pop();
+    console.log(arr);
+    console.log("pop :", pop);
+    // 맨앞 삭제
+    let shift = arr.shift();
+    console.log(arr);
+    console.log("shift :", shift);
+    
+    // 배열 순서 거꾸로 바꾸기
+    arr.reverse();
+    console.log(arr);
+    
+    // 오른차순정렬
+    arr.sort();
+    console.log(arr);
+    
+    console.log("----------------------");
+    // [1,2,2,3,4,5]
+    // splice(시작 index, count)
+    // splice(시작 index) 마지막까지
+    let splice = arr.splice(2,3);
+    console.log(arr);
+    console.log(splice);
+    
+    console.log("----------------------");
+    let splice2 = arr.splice(-2);
+    console.log("arr", arr);
+    console.log("splice2", splice2);
+    console.log("----------------------");
+    
+    let month = "12";
+    let month2 = "1";
+    
+    month = "0" + month;
+    month2 = "0" + month2;
+    
+    arr = [1,2,3,4,5];
+    let s = arr.splice(1,2,'둘'); // 인덱스 시작값과 마지막값을 짤라서 변수 s 에 값을넣고 '둘'을 삽입
+    console.log(arr);
+    console.log(s);
+    console.log("----------------------");
+    let s1 = arr.splice(1,2,'서이',[1,2,3,4,'Ehd'], '너이');
+    console.log(arr);
+    console.log(s);
+    
+    console.log("----------------------");
+    let join= arr.join();
+    let join2 = arr.join('-');  //문자로 바꿔줌
+    console.log(arr);
+    console.log(join);
+    console.log(join2);
+    
+    // 문자열함수 split 으로 전달인자와 문자의 문자로잘라서 배열로만듬
+    // 단 전달인자의 문자는 사라짐
+    console.log("----------------------");
+    let split = join2.split("-");
+    console.log(split);
+    
+    arr = [1,2,3,4,5];
+    // slice(시작 index, 종료index)
+    // splice 와 달리 slice는 원본을 놔두고 복사만해옴.
+    let slice = arr.slice(1,3);
+    console.log(arr);
+    console.log(slice);
+    
+    console.log("----------------------");
+    // arr 배열에 slice 배열을 붙여넣음
+    // 역시 원본은 건들지않음
+    let concat = arr.concat(slice);
+    console.log(arr);
+    console.log(slice);
+    console.log(concat);
+
+    console.log(arr.toString());
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+    console.log("--------for Each---------")
+    let arr3 = [10,20,30,40,50]
+    arr3.forEach( function(a,b,c,d) {
+      console.log("a:",a);
+      console.log("b:",b);
+      console.log("c:",c);
+      console.log("d:",d);
+    } )
+    console.log("--------for Each---------")
+    arr3.forEach(function(element, index, arr){
+      console.log("element: ", element);
+      console.log("index: ", index);
+      console.log("arr: ", arr);
+    })
+    console.log("--------map---------")
+    arr3.map(function(element, index, arr){
+      console.log("element: ", element);
+      console.log("index: ", index);
+      console.log("arr: ", arr);
+    })
+
+    console.log("--------filter---------")
+    let arr30 = arr3.filter(function(element,index,arr){
+      let result =false;
+      if(element = false){
+        result = true;
+      } else {
+        result = false;
+      }
+    })
+    console.log(arr30);
+
+    let arr30_1 = arr3. filter(function(element){
+      return element >= 30;
+    });
+
+    let arr30_2 = arr3.filter(el => el >= 30);
+
+    let movies = [
+      '하얼빈',
+      '보고타zzzzzzzzzz',
+      '시빌 워tq',
+      '무파사'
+    ]
+    let len = movies.map(el => el.length);
+    console.log(len);
+
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

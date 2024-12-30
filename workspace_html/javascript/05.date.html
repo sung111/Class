@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    // browser 시간
+    let now = new Date();
+    console.log(now);
+
+    // 년
+    let nowY = now.getFullYear();
+    console.log(nowY);
+
+    // 월
+    let nowM = now.getMonth();
+    console.log((nowM + 1) + "월");
+
+    // 일
+    let nowD = now.getDate();
+    console.log(nowD + "일");
+    
+    // 요일 (일==0 ~ 토==6)
+    let nowW = now.getDay();
+    console.log(nowW + "요일");
+    
+    let nowH = now.getHours();
+    console.log(nowH + "시");
+    
+    let nowm = now.getMinutes();
+    console.log(nowm + "분");
+    
+    let nowS = now.getSeconds();
+    console.log(nowS + "초");
+
+    // 세계협정 표준시
+    let iso = now.toISOString();
+    console.log(iso);
+    // T 를기준으로 앞뒤를 짜르고 배열로만듬
+    let arrIso = iso.split("T");
+    console.log(arrIso);
+    // 나온 시간 1/1000 초를 .으로 ms 를 표시하기때문에
+    // .을 기준으로 짤라서 배열로 나눈다 그중에 앞쪽 [0] 번인덱스를 출력한다.
+    console.log(arrIso[1].split(".")[0]);
+
+    // 1970년 1월 1일 자정부터 지난시간을 보여줌(ms)
+    let timestamp = now.getTime();
+    console.log(timestamp);
+    
+    let before = new Date(1735524164758);
+    console.log(before.getHours() );
+
+    
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

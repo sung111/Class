@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 500vh;
+    }
+    #console{
+      position: sticky;
+      top: 0;
+    }
+  </style>
+  <script>
+
+    window.addEventListener("load", init)
+    // window.onload = function(){
+    //   init();
+    // }
+
+    function init(){
+      const btn2 = document.querySelector("#btn2");
+      console.log('btn2 :', btn2);
+      
+      btn2.onclick = function(){
+        document.querySelector("#console").innerHTML += "버튼2 클릭<br>"
+      }
+      btn2.onclick = function(){
+        document.querySelector("#console").innerHTML += "버튼2-1 클릭<br>"
+        console.log("버튼 2 클릭")
+      }
+
+      const btn3 = document.querySelector("#btn3");
+      btn3.addEventListener("click", function(){
+        document.querySelector("#console").innerHTML += "버튼 3 클릭ㅆ<br>"
+        document.documentElement.scrollTop = 1000;
+
+      })
+      btn3.addEventListener("click", function(){
+        document.querySelector("#console").innerHTML += "버튼 3-1 클릭ㅆ<br>"
+      })
+
+      const btn4 = document.querySelector("#btn4");
+      btn4.addEventListener("click", btn1click);
+      btn4.addEventListener("click", btn4click);
+      // removeEventListener : 해당이벤트 콜백 제거
+      // 단, 익명함수는 불가능
+      // 마치 함수마다 고유한 id 같은게 있는데
+      // 익명함수는 선언될때마다 vm이라는 공간에
+      // 신규 id 를 발급받기 때문에 지울때 사용하지 못함
+      btn4.removeEventListener("click", btn4click);
+
+      window.addEventListener("scroll", function(){
+        const scrollTop = document.documentElement.scrollTop;
+        document.querySelector("#console").innerHTML = scrollTop;
+      })
+      const login = document.querySelector("#login");
+      login.addEventListener("click", function(){
+        console.log(id.value);
+        console.log(pw.value);
+      })
+    }
+
+    function btn1click(){
+      console.log("버튼 1 클릭")
+      document.querySelector("#console").innerHTML += "버튼클릭s<br>"
+    }
+    function btn4click(){
+      console.log("버튼 4 클릭")
+      document.querySelector("#console").innerHTML += "버튼 4444444 'click' <br>"
+    }
+
+
+  </script>
+
+</head>
+<body>
+  
+  <button type="button" id="btn1" onclick="btn1click();alert(1)">버튼1</button>
+  <button type="button" id="btn2">버튼2</button>
+  <button type="button" id="btn3">버튼3</button>
+  <button type="button" id="btn4"">버튼4</button>
+  <div id="console"></div>
+
+  <div>
+    아이디 : <input type="text" id="id"> <br>
+    비밀번호 : <input type="password" id="pw"><br>
+    <br>
+    <input type="button" id="login" value="로그인">
+  </div>
+</body>
+</html>

@@ -15,6 +15,18 @@
     부모 <span>span안쪽</span>
     <div>안쪽 div</div>
   </div> -->
+  id : <input type="text" id="id" value="미리적음"><br>
+  date : <input type="date" id="date"><br>
+  radio : <input type="radio" name="ai" value="1"checked=checked>gpt
+  radio : <input type="radio" name="ai" value="2">gamini
+  radio : <input type="radio" name="ai" value="3">bing
+<br>
+  <select id="select">
+    <option value="1">첫째</option>
+    <option value="2">둘째</option>
+  </select>
+<br>
+  <textarea id="textarea" cols="50" rows="10"></textarea>
 
   <script>
     let msg = document.querySelector("#msg");
@@ -81,6 +93,41 @@
   let dom = new DOMParser().parseFromString(html, "text/html");
   console.log(dom);
   console.log(dom.documentElement);
+  let div2 = dom.documentElement.querySelector("body>div");
+  div.append(div2)
+
+  setTimeout(
+    function(){
+      const text = document.querySelector("#id");
+      console.log(text.value);
+
+      const date = document.querySelector("#date");
+      console.log(date.value);
+
+      const ai = document.querySelector("[name=ai]:checked")
+      console.log(ai.value);
+
+      const ais = document.querySelectorAll("[name=ai]");
+      for( let i = 0 ; i < ais.length ; i++){
+        console.log(ais[i].checked);
+        if(ais[i].checked){
+          console.log(ais[i].value);
+        }
+      }
+
+      const select = document.querySelector("#select");
+      console.log(select.value);
+
+      const textarea = document.querySelector("#textarea");
+      console.log(textarea.value)
+
+      let test = textarea.value.replace(/123/g, "일이쌈");
+      console.log(test)
+
+    } , 4 * 1000
+  );
+  
+
   </script>
 </body>
 </html>

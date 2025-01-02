@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener("load",init)
+
+    function init(){
+      // 선택한것에따라다르게 #view 에 출력
+      const bnt1 = document.querySelector("#btn1")
+      
+      btn1.addEventListener("click", function(){
+        const night = document.querySelector("#night");
+        const view = document.querySelector("#view");
+        if( night.value == 1 ){
+          view.innerHTML = "게임을 선택했습니다.";
+          console.log("게임을 선택했습니다.");
+        } else if( night.value == 2){
+          view.innerHTML = "공부를 선택했습니다.";
+          console.log("공부를 선택했습니다.");
+        } else if( night.value == 3){
+        view.innerHTML = "good night";
+        console.log("good night");
+        }
+      })
+
+    }
+
+      // 조건문2
+      // 로그인버튼을 눌렀을때 아이디 또는 비밀번호에 쓴글이없으면
+      // 비번아래에 로그인버튼위에
+      // 빨간색으로 아이디는 필수입니다. , 비번은 필수입니다.
+  </script>
+</head>
+<body>
+
+  <select id="night">
+    <option value="1">game</option>
+    <option value="2">study</option>
+    <option value="3">jam</option>
+  </select>
+  <button type="button" id="btn1">확인</button>
+  <div id="view"></div>
+  <hr>
+  
+  id : <input type="text">
+  <br>
+  pw : <input type="password">
+  <button>로그인</button>
+
+
+
+</body>
+</html>

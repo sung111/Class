@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+
+  // hi = []
+  // hi.push(7)
+  // hi.push(3)
+  // hi.push(5)
+  // hi.push(8)
+
+  // let value = 5;
+  // let z = false;
+  // for(let i = 0 ; i < hi.length ; i++){
+  //   if(hi[i] == value){
+  //     z = true
+  //   } 
+  // }
+
+  // if(z == true){
+  //   console.log("같은게있다.")
+  // } else {
+  //   console.log("없썼씀")
+  // }
+  // 없었다?
+
+
+  let lotto = [];
+
+  while (lotto.length <= 6) {
+    console.log('lotto.length', lotto.length)
+
+    let value = parseInt(Math.random() * 45) + 1;
+
+    let dub = false;
+    for(let i=0; i<lotto.length ; i++){
+      if(lotto[i] == value){
+        dup = true;
+        break;
+      }
+    }
+
+    if(!dup){
+      lotto.push(value)
+    }
+
+  }
+  lotto.sort(function(x,y){
+    return x - y
+  })
+  console.log(lotto)
+
+  
+
+
+  </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

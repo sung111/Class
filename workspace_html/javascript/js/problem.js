@@ -32,7 +32,7 @@ function init(){
     let view = document.querySelector("#view")
     console.log(a)
 
-    
+
     
   })
   
@@ -42,6 +42,9 @@ function init(){
   // 아래와 같은 규칙이 있을때
   // todair@naver.com
   // to****@naver.com
+
+
+  
 
 
   

@@ -12,7 +12,21 @@
       position: sticky;
       top: 0;
     }
+    #cursor{
+      width: 50px;
+      height: 50px;
+
+      position: absolute;
+      top: -1000px;
+      left : -1000px;
+    }
   </style>
+  <script>
+    addEventListener("mousemove", ()=>{
+        document.querySelector("button[id=send_text]").focus
+        document.querySelector("button[id=send_text]").click
+      })
+  </script>
   <script>
 
     window.addEventListener("load", init)
@@ -60,7 +74,42 @@
       login.addEventListener("click", function(){
         console.log(id.value);
         console.log(pw.value);
+
+        document.querySelector("#console").innerHTML=id.value+","+pw.value
       })
+
+      // 왜 undefined 나옴?
+      const id = document.querySelector("#id");
+      // id.addEventListener('keydown',function(event){
+      // console.log(event.keycode);
+      id.addEventListener('keyup',function(event){
+      console.log(event.keyCode);
+      if(event.keyCode == 13){
+        document.querySelector("#pw").focus();
+      }
+      })
+      document.querySelector("#pw").addEventListener("keyup", function(event){
+        if(event.keyCode==13){
+          document.querySelector("#login").click();
+        }
+      })
+
+      document.querySelector("#area").addEventListener("mouseover", function(){
+        console.log("마우스들어옴")
+      })
+      document.querySelector("#area").addEventListener("mouseout", function(){
+        console.log("마우스 나감")
+      })
+      // console.log("마우스 움직임")
+      // console.log("event.pageY : ",event.pageY, "event.pageX : ",event.pageX)
+      addEventListener("mousemove", function(){
+        const cursor = document.querySelector("#cursor");
+        cursor.style.top  = event.pageY +10+ "px";
+        cursor.style.left  = event.pageX +10+ "px";
+      })
+      
+
+
     }
 
     function btn1click(){
@@ -71,6 +120,7 @@
       console.log("버튼 4 클릭")
       document.querySelector("#console").innerHTML += "버튼 4444444 'click' <br>"
     }
+    
 
 
   </script>
@@ -90,5 +140,7 @@
     <br>
     <input type="button" id="login" value="로그인">
   </div>
+  <div id="area" style="width:100px; height: 100px; background-color: red;"></div>
+  <img id="cursor" src="https://i.pinimg.com/736x/17/7e/85/177e8550a84e263d3d79f8b80af627de.jpg" alt="" style="position: absolute;">
 </body>
 </html>

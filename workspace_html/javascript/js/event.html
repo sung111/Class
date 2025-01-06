@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 1번문제 error 출력 class */
+    .error{
+      color: red;
+    }
+
+    /* 2번문제 잘안보임 박스 설정. */
+    .box{
+      border: 1px solid black;
+      margin: 20px;
+    }
+
+  </style>
+  <script>
+
+    window.addEventListener("load",init)
+
+    function init () {
+
+      // 1번문제 : 비밀번호 확인 이벤트
+      document.querySelector("#btn").addEventListener('click',()=>{
+        const pw1 = document.querySelector('#pw1')
+        const pw2 = document.querySelector('#pw2')
+        var view = document.querySelector("#view")
+
+        if(pw1.value == pw2.value){
+          view.innerHTML = ""
+        } else {
+          view.classList.add('error')
+          view.innerHTML = "비밀번호를 확인하세요."
+        }
+      })
+
+      // 문제 2번 체크박스 체크시 값가져오기
+      const same=document.querySelector('#same')
+      same.addEventListener('click', ()=>{
+        const name = document.querySelector('#name')
+        const name1 = document.querySelector('#name1')
+        const number = document.querySelector('#number')
+        const number1 = document.querySelector('#number1')
+        const address = document.querySelector('#address')
+        const address1 = document.querySelector('#address1')
+        if(same.checked){
+          console.log("체크됨")
+          name1.value = name.value;
+          number1.value = number.value;
+          address1.value = address.value;
+        } else {
+          console.log("체크풀림")
+          name1.value = ""
+          number1.value = "";
+          address1.value = "";
+        }
+      })
+
+      // 문제3 번 주문하기
+      const btn1 = document.querySelector('#btn1')
+      btn1.addEventListener('click',()=>{
+        // 피자 선택
+        const pizza = document.querySelector('#pizza');
+        // 사이즈 선택
+        const size = document.querySelector('input[name="size"]:checked');
+        // 토핑 첵박
+        const check = document.querySelector('input[type="checkbox"]:checked');
+        // 요청사항
+        const gownj = document.querySelector('#gownj');
+        // 주문내역 펼치기
+        const bill = document.querySelector('#bill');
+        //체크된 라디오버튼 찾아서 값넣기
+
+
+
+        bill.innerHTML = pizza.value + '<br>'
+        if(size){
+          bill.innerHTML += size.value + '<br>'
+        }
+        if(check){
+          bill.innerHTML += check.value + '<br>'
+        }
+        bill.innerHTML += gownj.value + '<br>'
+        bill.innerHTML += "총가격은" + "456억입니다."
+
+      })
+
+    }
+
+  </script>
+</head>
+<body>
+  
+  <input type="password" id="pw1">
+  <br>
+  <input type="password" id="pw2"> <button id="btn">로그인</button><br>
+  <div id="view"></div>
+
+  <div class="box">
+    주문정보<br>
+    이름 : <input type="text" id="name">
+    <br>
+    전화번호 : <input type="text" id="number">
+    <br>
+    주소 : <input type="text" id="address">
+  </div>
+  <div class="box">
+    <input type="checkbox" id="same">주문정보와 동일합니다.<br>
+    배송정보<br>
+    이름 : <input type="text" id="name1">
+    <br>
+    전화번호 : <input type="text" id="number1">
+    <br>
+    주소 : <input type="text" id="address1">
+  </div>
+
+  <select name="피자" id="pizza">
+    <option value="김치피자">김치피자</option>
+    <option value="치즈피자">치즈피자</option>
+    <option value="고르곤졸라피자">고르곤졸라피자</option>
+  </select><br>
+  <input type="radio" name="size" value="작게" checked>작게 <br>
+  <input type="radio" name="size" value="중간">중간 <br>
+  <input type="radio" name="size" value="크게">크게 <br>
+  <input type="radio" name="size" value="쬴라크게">쬴라크게 <br><br>
+  토핑해드려?<br>
+  <input type="checkbox" value="새우">새우<br><br>
+  <input type="checkbox" value="치쯔">치쯔<br><br>
+
+  <input type="text" id="gownj" placeholder="요청사항"><br>
+  <button id="btn1">주문하기</button><br>
+  <!-- <p id="bill"></p> -->
+  <div id="bill"></div>
+</body>
+</html>

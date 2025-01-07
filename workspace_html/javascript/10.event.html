@@ -20,13 +20,17 @@
       top: -1000px;
       left : -1000px;
     }
+    #tjs{
+      list-style: none;
+    }
+    .tjs1{
+      font-weight: 900;
+    }
+    .bold{
+      font-weight: 900;
+    }
   </style>
-  <script>
-    addEventListener("mousemove", ()=>{
-        document.querySelector("button[id=send_text]").focus
-        document.querySelector("button[id=send_text]").click
-      })
-  </script>
+
   <script>
 
     window.addEventListener("load", init)
@@ -95,6 +99,7 @@
       })
 
       document.querySelector("#area").addEventListener("mouseover", function(){
+        console.log(event)
         console.log("마우스들어옴")
       })
       document.querySelector("#area").addEventListener("mouseout", function(){
@@ -108,6 +113,120 @@
         cursor.style.left  = event.pageX +10+ "px";
       })
       
+      id.addEventListener('focus',()=>{
+        id.style.background = 'yellow';
+      })
+      id.addEventListener('blur',()=>{
+        id.style.background = '';
+      })
+
+      document.querySelector("#form").addEventListener('submit',(event)=>{
+        event.preventDefault();
+        console.log('쒀밋 이벤ㅌ')
+        let search = document.querySelector('#search')
+        if(search.value.length > 1){
+          console.log("네이버 검색 가즈아")
+        } else {
+          alert('2글자 이상작성 바람')
+        }
+
+      })
+
+      // addEventListener('selectstart',(event)=>{
+      //   event.preventDefault();
+      // })
+
+      // 클래스가 chk 인 모든요소를가져와서
+      // 모든 value, 체크여부를 console 로 출력
+      // 체크된것은 value 에 !!! 를 붙여서 출력하기
+      const chks = document.querySelectorAll('.chk')
+      // console.log(chk)
+      for(let i = 0 ; i < chks.length ; i++){
+        console.log(chks[i].value, chks[i].checked)
+        
+        if(chks[i].checked){
+          console.log("!!!", chks[i].value)
+        }
+      }
+
+      const all1 = document.querySelector('#all1');
+      console.log(all1.checked)
+      all1.addEventListener('click',(event)=>{
+        if(all1.checked){
+          for(let i = 0 ; i < chks.length ; i++){
+            chks[i].checked = true;
+          }
+        } else {
+          for(let i = 0 ; i < chks.length ; i++){
+            chks[i].checked = false;
+          }
+        }
+      })
+
+      // 자식 체크박스들이 모두 체크되어있으면 전체선택 체크
+      // 자식 체크박스들이 하나라도 체크가 풀려있으면 전체선택 체크해제
+      for( let chk of chks){
+        // 각각클릭이벤트
+        chk.addEventListener('click',()=>{
+          let flag = true;
+          // 하나라도 해제된게있으면 
+          // for( let i in chks){         // entries 라는게 i 라는게 들어가있어서 실패
+          for(let i of chks){
+            if(!chks[i].checked){
+              flag = false;
+              break;
+            }
+          }
+
+          if(!flag){
+            all1.checked = false;
+          } else {
+            all1.checked = true;
+          }
+        })
+
+      }
+
+
+      console.log(this)
+      //콜백을 arrow함수를 사용하면 this는 window 로 유지됨
+      // document.querySelector("#parent").addEventListener('click',(event)=>{
+      document.querySelector("#parent").addEventListener('click',function(event){
+        // this 는 더이상 window 가 아님.
+        // 이렇게 내용이바뀔수있음, js에서 this는 알고있는것만 사용할것
+        console.log('this : ', this);
+        
+        // event.target = 실제로 이벤트가 발생한 dom
+        console.log('event.target :', event.target);
+        // event.currentTarget = 이벤트가 적용된 dom
+        console.log('event.currentTarget', event.currentTarget);
+        
+        console.log('this : ', this);
+        console.log(this === event.currentTarget);
+
+      }, false)
+
+      document.querySelector("#child1").addEventListener('click', (event)=>{
+        // 전파방지
+        // 부모로 전달되는 이벤트를 중지
+        event.stopPropagation();
+        console.log('자식1 클릭')
+      })
+
+      // document.querySelector('#tjs').addEventListener('click',(event)=>{
+      //   console.log(event.target);
+      //   if(){
+      //     event.target.classList.add('tjs1');
+      //   }else {
+      //     event.target.classList.remove('tjs1')
+      //   }
+
+      // })
+
+      document.querySelector('#li_1').addEventListener('click',(event)=>{
+        console.log(event.target);
+        event.target.classList.add('bold');
+      })
 
 
     }
@@ -120,7 +239,6 @@
       console.log("버튼 4 클릭")
       document.querySelector("#console").innerHTML += "버튼 4444444 'click' <br>"
     }
-    
 
 
   </script>
@@ -142,5 +260,90 @@
   </div>
   <div id="area" style="width:100px; height: 100px; background-color: red;"></div>
   <img id="cursor" src="https://i.pinimg.com/736x/17/7e/85/177e8550a84e263d3d79f8b80af627de.jpg" alt="" style="position: absolute;">
+
+  <form id="form" method="get" action="https://search.naver.com/search.naver">
+    네이버 검색 : <input type="text" name="query" id="search">
+    <input type="submit" value="검색">
+  </form>
+
+  떡볶이 토핑 : <input type="checkbox" id="all1">전체선택 <br>
+  <input type="checkbox" class="chk" value="분모자">분모자
+  <input type="checkbox" class="chk" value="비엔나">비엔나
+  <input type="checkbox" class="chk" value="우삼겹">우삼겹
+  <input type="checkbox" class="chk" value="치즈">치즈
+  <input type="checkbox" class="chk" value="라면">라면
+
+  <div id="parent">
+    부모
+    <div id="child1">자식1</div>
+    <div id="child2">자식2</div>
+  </div>
+
+
+
+  <div>
+    <ul id="tjs">
+      <li>
+        <label>
+          인기상품순
+        </label>
+      </li>
+      <li>
+        <label>
+          낮은가격순
+        </label>
+      </li>
+      <li>
+        <label>
+          높은가격순
+        </label>
+      </li>
+      <li>
+        <label>
+          상품평 많은순
+        </label>
+      </li>
+    </ul>
+  </div>
+
+
+
+  <div id="li_1">첫번째</div>
+  <div id="li_2">두번째</div>
+
+  <script>
+    let li_1 = document.querySelector("#li_1")
+    li_1.addEventListener('click',(event)=>{
+      console.log(1)
+      console.log(li_1)
+      console.log(event.target)
+      console.log(li_1 === event.target)
+      console.log(event.currentTarget)
+      console.log(li_1 === event.currentTarget)
+    })
+    let li_2 = document.querySelector("#li_2")
+    li_2.addEventListener('click',()=>{
+      console.log(2)
+    })
+  </script>
+
+  <ol id="ol">
+    <li id="'ol_li_1">li 첫번쮀</li>
+    <li id="'ol_li_2">li 두번째</li>
+  </ol>
+  <script>
+    // 아이디 ol클릭하면, event.target과, event.currentTarget 출력
+    document.querySelector('#ol').addEventListener('click', ()=>{
+      console.log(event.target)
+      console.log(event.currentTarget)
+
+      const lis = document.querySelectorAll("#ol li")
+      for(let i=0; i<lis.length;i++){
+        lis[i].classList.remove("bold");
+      }
+      event.target.classList.add("bold");
+    })
+  </script>
+
 </body>
 </html>

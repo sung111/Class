@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .head{
+      display: flex;
+      width: 100%;
+    }
+    .hide{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="head">
+
+    <!-- 작은거 -->
+    <div class="small"> 
+      <img src="https://thumbnail8.coupangcdn.com/thumbnails/remote/48x48ex/image/vendor_inventory/c2e9/d62a7e7640e74b8ac61a8b12f6dd6aa49a46bb2d02ae4a86e0ea3376585e.jpg" alt="" data-view="a1">
+      <img src="https://thumbnail10.coupangcdn.com/thumbnails/remote/48x48ex/image/retail/images/114881920222184-00ea9d8e-9e26-4ca5-8274-7e03ebdc4bf2.png" alt="" data-view="a2">
+      <img src="https://thumbnail9.coupangcdn.com/thumbnails/remote/48x48ex/image/retail/images/114881919374050-97316b1e-29b4-4cff-81d5-bc20f833d055.png" alt="" data-view="a3">
+    </div>
+
+    <!-- 큰거 -->
+    <div>
+      <div class="big" id="a1">
+        <img src="https://thumbnail8.coupangcdn.com/thumbnails/remote/492x492ex/image/vendor_inventory/c2e9/d62a7e7640e74b8ac61a8b12f6dd6aa49a46bb2d02ae4a86e0ea3376585e.jpg" alt=""  class="zj" >
+      </div>
+      <div class="big hide" id="a2">
+        <img src="https://thumbnail10.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/114881920222184-00ea9d8e-9e26-4ca5-8274-7e03ebdc4bf2.png" alt=""  class="zj" >
+      </div>
+      <div class="big hide" id="a3">
+        <img src="https://thumbnail9.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/114881919374050-97316b1e-29b4-4cff-81d5-bc20f833d055.png" alt=""  class="zj" >
+      </div>    
+    </div>
+  </div>
+  <script>
+    document.querySelector('.small').addEventListener('click',(event)=>{
+      console.log(event.target.getAttribute('data-view'))
+
+      const a = event.target.getAttribute('data-view')
+      console.log(a)
+      const img=document.querySelector('#'+a)
+      // console.log(img)
+      const big1=document.querySelectorAll('.big');
+      for(let i = 0 ; i < big1.length ; i++){
+        big1[i].classList.add('hide')
+      }
+      img.classList.remove('hide');
+
+
+
+    })
+    
+  </script>
+</body>
+</html>

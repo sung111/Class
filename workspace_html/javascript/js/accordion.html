@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+
+    .title{
+      color: red;
+    }
+    .hide{
+      display: none;
+    }
+
+  </style>
+
+</head>
+<body>
+  <div>
+    <div>
+      <div id="a1" class="title"><h2>Accordion Item #1</h2></div>
+      <div class="detail hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis neque quo enim quis in beatae sint adipisci mollitia natus, illum nostrum minus, aperiam hic amet nisi tempora! Atque, fugiat! </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div id="a2" class="title"><h2>Accordion Item #2</h2></div>
+      <div class="detail hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis neque quo enim quis in beatae sint adipisci mollitia natus, illum nostrum minus, aperiam hic amet nisi tempora! Atque, fugiat! </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div id="a3" class="title"><h2>Accordion Item #3</h2></div>
+      <div class="detail hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis neque quo enim quis in beatae sint adipisci mollitia natus, illum nostrum minus, aperiam hic amet nisi tempora! Atque, fugiat! </div>
+    </div>
+  </div>
+  <div>
+    <div>
+      <div id="a4" class="title"><h2>Accordion Item #4</h2></div>
+      <div class="detail hide">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti facilis neque quo enim quis in beatae sint adipisci mollitia natus, illum nostrum minus, aperiam hic amet nisi tempora! Atque, fugiat! </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector("#a1").addEventListener('click', (event)=>{
+      // console.log(event.target)
+      const p = event.currentTarget.parentNode;
+      console.log(p)
+      const d = p.querySelector(".detail");
+      d.classList.remove('hide');
+    })
+
+    const titles = document.querySelectorAll('.title');
+    for(let i = 0 ; i < titles.length ; i++){
+      titles[i].addEventListener('click',(event)=>{
+        let details = document.querySelectorAll('.detail')
+        for(let j = 0 ; j < details.length ; j++){
+          details[j].classList.add('hide');
+        }
+
+        const p = event.currentTarget.parentNode;
+        const d = p.querySelector(".detail")
+        d.classList.remove('hide');
+      })
+    }
+  </script>
+</body>
+</html>

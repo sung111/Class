@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .main{
+      border: 1px solid red;
+      text-align: center;
+    }
+    #id{
+      display: flex;
+      justify-content: space-between;
+      padding: 15px 40px 15px 40px;
+    }
+    .menu{
+      border: 1px solid red;
+      padding : 30px;
+    }
+    .hide{
+      display: none;
+    }
+  </style>
+  <script>
+    window.addEventListener('load',init)
+    function init(){
+      // const menu = document.querySelectorAll('.menu')
+      // for(let i = 0 ; i < menu.length ; i++){
+      //   menu[i].addEventListener('click',(event)=>{
+      //     const details = document.querySelectorAll('#detail');
+      //     for(let j = 0 ; j < details.length ; j++){
+      //       details[j].classList.add('hide');
+      //     }
+      //     const kk = event.currentTarget.parentNode;
+      //     const tt = kk.parentNode;
+      //     const jj = tt.querySelectorAll('#detail')
+      //   })
+      // }
+
+      document.querySelector('#menu').addEventListener('click',()=>{
+        console.log(evt.target.innerHTML)
+        
+      })
+
+
+
+    }
+  </script>
+</head>
+<body>
+  <div>
+    <div>
+      <div id="detail" class="main hide"><h2>About</h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+      <div id="detail" class="main hide"><h2>Products</h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+      <div id="detail" class="main hide"><h2>Technology</h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+      <div id="detail" class="main hide"><h2>Downloads</h2>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</div>
+    </div>
+    <div id="menu">
+      <div class="menu">About</div>
+      <div class="menu">Products</div>
+      <div class="menu">Technology</div>
+      <div class="menu">Downloads</div>
+    </div>
+  </div>
+</body>
+</html>

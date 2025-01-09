@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>댓글 형태로 쌓기 예제</title>
+  <style>
+    #comments {
+      border: 1px solid #ccc;
+      padding: 10px;
+      width: 300px;
+      margin-bottom: 10px;
+    }
+    .comment {
+      border-bottom: 1px solid #eee;
+      padding: 5px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .comment span {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+  <button id="addCommentBtn">댓글 추가</button>
+  <div id="comments">
+    <!-- 댓글이 여기에 추가됩니다. -->
+  </div>
+
+  <script>
+    const commentsDiv = document.querySelector("#comments");
+    const addCommentBtn = document.querySelector("#addCommentBtn");
+    let commentCount = 0;
+
+    addCommentBtn.addEventListener("click", () => {
+      commentCount++;
+
+      // 댓글 컨테이너 생성
+      const commentDiv = document.createElement("div");
+      commentDiv.classList.add("comment");
+
+      // 댓글 텍스트 생성
+      const commentText = document.createElement("span");
+      commentText.textContent = `댓글 ${commentCount}`;
+
+      // 삭제 버튼 생성
+      const deleteBtn = document.createElement("button");
+      deleteBtn.textContent = "삭제";
+
+      // 댓글 컨테이너에 텍스트와 삭제 버튼 추가
+      commentDiv.append(commentText, deleteBtn);
+
+      // 댓글 영역에 새로운 댓글 추가 (맨 위에 쌓이도록 prepend 사용)
+      commentsDiv.prepend(commentDiv);
+
+      // 삭제 버튼 클릭 시 해당 댓글 삭제
+      deleteBtn.addEventListener("click", () => {
+        commentDiv.remove();
+      });
+    });
+  </script>
+</body>
+</html>

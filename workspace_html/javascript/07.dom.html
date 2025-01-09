@@ -29,8 +29,10 @@
   <br>
   <input type="text" class="intext">
   
+  <div id="del">지워짐</div>
   
   <script>
+
     // document 는 html 문서 전체를 뜻함
     // getElementById : 속성 id의 값을 이용해 dom을가져온다.
     let title = document.getElementById("title");
@@ -174,7 +176,9 @@
     img[0].setAttribute("huhu", "1강의실");
     img[0].setAttribute("src", "https://www.jaenung.net/storage/list_img4/1592919738590850_1718463065.png");
 
-    
+    let a = document.querySelector('#del').remove();
+    console.log(a)
+
     </script>
 </body>
 </html>

@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-around;
+  margin: 30px;
+}
+
+.tapMenu {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.radio {
+  display: none;
+}
+
+.movieSelect {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+label{
+  cursor: grab;
+}
+
+.movieSelect span {
+  font-size: 20px;
+  font-weight: 600;
+  /* margin-right: 30%; */
+}
+
+/* movieBox 안보이게 */
+.movieBox1,
+.movieBox2,
+.movieBox3,
+.movieBox4 {
+  text-align: center;
+  border: 1px solid red;
+}
+
+.movieInfo {
+  display: inline-block;
+}
+
+.movieInfo>p {
+  text-align: center;
+  justify-content: center;
+
+}
+
+.coment {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  font-size: 30px;
+}
+
+p {
+  width: 600px;
+}
+
+#view, #view2, #view3, #view4 {
+  display: inline-block;
+  justify-content: center;
+}
+
+#view .viewComent,#view2 .viewComent,#view3 .viewComent,#view4 .viewComent {
+  width: 800px;
+  display: flex;
+  justify-content: space-between;
+}
+.plus {
+  min-width: 80px;
+  max-width: 400px;
+}
+
+.hide {
+  display: none;
+}
+
+.block {
+  display: block;
+}
+
+/* 댓글창에 입력하지않았을때 "입력하세요" 보이기 */

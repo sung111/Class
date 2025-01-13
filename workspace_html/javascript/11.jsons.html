@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    //배열 : 값을 순서로 관리하는방법
+    let array = []
+    // json : 값을 key 로 관리하는 방법
+    // json 선언
+    let json = {}
+
+    // 값을 미리 알고있는 경우
+    json = {
+      'key': 'value',
+      'num' : 123,
+      k1 : 'abc',
+      child : {
+        'child_1' : 'value-1'
+      },
+      'a1' : array,
+      'fn' : function(){
+        console.log('함수실행')
+      }
+    }
+
+    console.log(json)
+    console.log(""+json)
+    console.log('key :'+json.key)
+    console.log('num :'+json.num)
+    console.log('child :'+json.child)
+    console.log('child.child_1 :'+json.child.child_1)
+    console.log('fn :'+json.fn)
+    json.fn()
+    json.key = 'value1'
+    console.log('json.key :', json.key)
+    // arr[19] = 19
+    // arr['abc'] = 19
+    json['key'] = 456
+
+    const keys = Object.keys(json);
+    for(let i = 0 ; i<keys.length; i++){
+      console.log(keys[i], json[keys[i]])
+    }
+
+    // 키삭제
+    delete json.key
+    console.log('zz',json)
+
+    const strJson = JSON.stringify(json)
+    console.log('strJson', strJson)
+
+    // json문법으로 된 문자열을 다시 json 객체로 변환
+    // json 배열도 변환 가능
+    let json2 = JSON.parse(strJson)
+    console.log('json2', json2)
+
+    let aJson = []
+    let json3 = {k3: 'abc'}
+    let json4 = {k4: 123}
+    aJson.push(json3)
+    aJson.push(json4)
+
+    // json을 string으로 변경
+    let strJson2 = JSON.stringify(aJson)
+    console.log(strJson2)
+    
+    // 
+    console.log( JSON.parse(strJson2) )
+    
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

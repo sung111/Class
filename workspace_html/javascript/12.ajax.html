@@ -59,9 +59,9 @@
         url += '&'
         url += 'dataType='+'JSON'
         url += '&'
-        url += 'base_date='+'20250113'
+        url += 'base_date='+'20250114'
         url += '&'
-        url += 'base_time='+'1600'
+        url += 'base_time='+'1030'
         url += '&'
         url += 'nx='+'63'
         url += '&'
@@ -80,10 +80,78 @@
           
           const data = JSON.parse(xhr.responseText)
           console.log(data)
+          const item = data.response.body.items.item
+          for(let i = 0 ; i < data.response.body.items.item.length; i++){
+            if(item[i].category == 'T1H' ){
+              console.log(`
+                    category:${data.response.body.items.item[i].category}
+                    fcstDate:${data.response.body.items.item[i].fcstDate}
+                    fcstTime:${data.response.body.items.item[i].fcstTime}
+                    fcstValue:${data.response.body.items.item[i].fcstValue}
+              `)
 
+            }
+            // console.log(data.response.body.items.item[i])
+            // console.log(data.response.body.items.item[i].category)
+          }
+          // console.log(data.response.body.items.item[24].fcstValue)
+          let filtered =  item.filter(function(obj){
+            if(obj.category== 'T1H'
+              ||obj.category == 'RN1'
+              ||obj.category == 'REH'
+              ){
+                return true
+            }
+            return false
+          })
+          console.log(filtered)
+          let item2 =  item.filter(function(obj){
+            if(obj.category== 'T1H'
+              ||obj.category == 'RN1'
+              ||obj.category == 'REH'
+              ){
+                return true
+            }
+            return false
+          })
+          console.log(item2)
+          item2.sort(function(a,b){
+            return a.fcstTime - b.fcstTime
+          })
+          
+          ////////////////////////////
+          // json 사용하기
+          // let result = {}
+          // for(let i = 0 ; i < item.length ; i++){
+          //   if(obj.category== 'T1H'
+          //     ||obj.category == 'RN1'
+          //     ||obj.category == 'REH'
+          //     ){
+          //       result.a = 
+          //       item[i].fcstTime
+          // }
         }
       })
 
+      document.querySelector('#btn4').addEventListener('click',function(){
+        const url = 'https://jsonplaceholder.typicode.com/users'
+        let option = {
+          method: 'get',
+          headers: {
+            'key': 'value'
+          },
+          // body: '{a:123444}'
+        }
+        fetch(url, option).then(function(response){
+          // response 는 fetch 가 돌려준 응답 객체
+          return response.json()
+        }).then(function(data){
+          console.log(data)
+        }).catch(function(error){
+          console.log(error)
+        })
+
+      })
 
 
     })
@@ -93,5 +161,7 @@
   <button type="button" id="btn1">ajax실행</button>
   <button type="button" id="btn2">lg디스플레이 실시간 주가</button>
   <button type="button" id="btn3">날씨</button>
+  <button type="button" id="btn4">버4</button>
+  
 </body>
 </html>

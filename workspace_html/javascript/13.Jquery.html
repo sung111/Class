@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
   <script>
-    window.addEventListener('load', ()=>{
+    window.addEventListener('load', () => {
 
     })
-    $(()=>{
+    $(() => {
       init(); // 전처리
       bind(); // 이벤트
     })
-    function init(){
+    function init() {
       const list_h1 = $('h1');
       console.log(list_h1);
       console.log(list_h1[0]);
@@ -24,120 +26,130 @@
       // html()은 innerHTML에 해당함.
       $('h1').html('<a href="javascript:void(0);"> a tag </a>');
 
-        console.log( $('#parent') );
-        // 자식 마지막으로추가
-        $('#parent').append("<div>짜식2</div>");
-        // 자식첫번째로추가
-        $('#parent').prepend("<div>짜식3</div>");
-        // 잘라넣기
-        $('#parent').append($('h1')[0]);
+      console.log($('#parent'));
+      // 자식 마지막으로추가
+      $('#parent').append("<div>짜식2</div>");
+      // 자식첫번째로추가
+      $('#parent').prepend("<div>짜식3</div>");
+      // 잘라넣기
+      $('#parent').append($('h1')[0]);
 
-        // 아래세개는 똑같다.
-        // 내용지우기
-        $('#parent')[0].innerHTML = ""
-        $('#parent').html("");
-        $('#parent').empty("");
-        
-        // 본인삭제
-        $('#parent')[0].remove();
+      // 아래세개는 똑같다.
+      // 내용지우기
+      $('#parent')[0].innerHTML = ""
+      $('#parent').html("");
+      $('#parent').empty("");
+
+      // 본인삭제
+      $('#parent')[0].remove();
 
 
-        // class추가
-        $('#chk').addClass('cb2');
-        // class 제거
-        $('#chk').removeClass('cb2');
-        // class toggle
-        $('#chk').toggleClass('cb2');
-        // 클래스 있는지 확인 contain 과 비슷
-        console.log($('#chk').hasClass('cb2'));
-        // if( $('#chk').hasClass('cb2') ){
-        //   console.log("cb2클래스있음")
-        // }
+      // class추가
+      $('#chk').addClass('cb2');
+      // class 제거
+      $('#chk').removeClass('cb2');
+      // class toggle
+      $('#chk').toggleClass('cb2');
+      // 클래스 있는지 확인 contain 과 비슷
+      console.log($('#chk').hasClass('cb2'));
+      // if( $('#chk').hasClass('cb2') ){
+      //   console.log("cb2클래스있음")
+      // }
 
-        // 전달인자 하나면 getAttribute 속성값가져오기
-        console.log($('#chk').attr('id'));
-        // 전달인자 두개면 setAttribute 속성과 값 추가
-        $('#chk').attr('data-human', '둘째값쓰');
+      // 전달인자 하나면 getAttribute 속성값가져오기
+      console.log($('#chk').attr('id'));
+      // 전달인자 두개면 setAttribute 속성과 값 추가
+      $('#chk').attr('data-human', '둘째값쓰');
 
-        $('#chk').attr('data-game', 'vsc');
-        // data- 속성명을 속성명만적고 가져올수있음
-        console.log($('#chk').data('game'));
-        
-        $('#chk').data('dinner', '쏘주');
-        console.log($('#chk').data('dinner'));
-        // 속성제거
-        $('#chk').removeAttr('data=game')
+      $('#chk').attr('data-game', 'vsc');
+      // data- 속성명을 속성명만적고 가져올수있음
+      console.log($('#chk').data('game'));
 
-        // 체크여부확인
-        console.log($('#chk').prop('checked'))
-        $('#chk').prop('checked',false)
+      $('#chk').data('dinner', '쏘주');
+      console.log($('#chk').data('dinner'));
+      // 속성제거
+      $('#chk').removeAttr('data=game')
 
-        // value 의 줄임말
-        console.log( $('#chk').val())
-        console.log( $('#input').val())
-        $('#input').val('바꾸기')
+      // 체크여부확인
+      console.log($('#chk').prop('checked'))
+      $('#chk').prop('checked', false)
 
-        // css 설정하기
-        $('#input').css('border','3px solid red')
-        console.log($('#input').css('width', '350px'))
+      // value 의 줄임말
+      console.log($('#chk').val())
+      console.log($('#input').val())
+      $('#input').val('바꾸기')
 
-        // display : none
-        $('#input').hide()
-        // display : none 제거
-        $('#input').show()
+      // css 설정하기
+      $('#input').css('border', '3px solid red')
+      console.log($('#input').css('width', '350px'))
 
-        // 자식요소중에서 찾기
-        $('#parent2').find('.child2');
-        // console.log( $('#parent2').find('.child2') );
-        
-        //부모로 올라가기
-        $('#parent2').parent()
-        console.log( $('#parent2').parent() );
-        // console.log( $('#parent2').parents('.grand') );
+      // display : none
+      $('#input').hide()
+      // display : none 제거
+      $('#input').show()
 
-      
+      // 자식요소중에서 찾기
+      $('#parent2').find('.child2');
+      // console.log( $('#parent2').find('.child2') );
+
+      //부모로 올라가기
+      $('#parent2').parent()
+      console.log($('#parent2').parent());
+      // console.log( $('#parent2').parents('.grand') );
+
+
     }
 
 
-    function bind(){
-      $('.btn').on('click', function(){
+    function bind() {
+      $('.btn').on('click', function () {
         console.log(this)
         console.log(event.target)
       })
-      $('.btn').on('click', function(){
+      $('.btn').on('click', function () {
         console.log(this)
         console.log(event.target)
       })
       // 앞에꺼 다지우고 하나만 넣기
-      $('.btn').off('click').on('click', function(event){
+      $('.btn').off('click').on('click', function (event) {
         console.log(this)
         console.log(event.target)
       })
 
 
       // 이벤트명, 식별자로 bind 하고
-      $('.btn').on('click.dom', function(event){
+      $('.btn').on('click.dom', function (event) {
         console.log(this)
         console.log(event.target)
       })
-      $('.btn').on('click.ajax', function(event){
+      $('.btn').on('click.ajax', function (event) {
         console.log(this)
         console.log(event.target)
       })
       // 이벤트명, 식별자로 특정 이벤트만 unbind 할수있다.
       $('.btn').off('click.dom')
 
-      $('.child2').on('click',function(){
+      $('.child2').on('click', function () {
         // event.stopPropagation()
         return false;
       })
       console.log($('#btn1'))
       // $('#btn1').click();
       // $('#btn1').trigger('click');
+      
+      // $('#section').slideToggle()
+      // $('#section').fadeToggle()
+      $('#btn3').on('click', ()=>{
+        $('#section').fadeToggle()
+      })
+
+      
     }
+
   </script>
 
 </head>
+
 <body>
   <h1>1</h1>
   <h1>2</h1>
@@ -146,7 +158,7 @@
     붐모
     <div class="child">쫘식</div>
   </div>
-  
+
   <input type="checkbox" id="chk" value="val1" class="cb1" data-human="값" checked="checked">
   <input type="text" id="input" value="">
 
@@ -158,6 +170,9 @@
 
   <input type="button" value="버튼1" class="btn" id="btn1">
   <input type="button" value="버튼2" class="btn" id="btn2">
+  <input type="button" value="버튼3" class="btn" id="btn3">
+  <div id="section" style="border: 1px solid black; background-color: yellow; height: 100px;">z</div>
 
 </body>
+
 </html>

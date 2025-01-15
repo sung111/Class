@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.addEventListener('load',init)
+
+    function init(){
+      const xhr = new XMLHttpRequest();
+      xhr.open('get','emp.json')
+      xhr.send()
+      xhr.onload = function(){
+        console.log(xhr.responseText)
+        const data = JSON.parse(xhr.responseText)
+        console.log(data[0].empno)
+        console.log(data.length)
+        document.querySelector('#btn1').addEventListener('click',()=>{
+          let hand = false;
+          const empno = document.querySelector('#empno').value;
+          const ename = document.querySelector('#ename').value;
+          for(let i = 0 ; i < data.length ; i++){
+            if(data[i].empno == empno && data[i].ename == ename){
+              hand = true
+              break;
+            }
+          }
+          if(hand){
+            alert(`환영데스요 ${ename}님`);
+          } else{
+            alert('똑바로 입력하도록')
+          }
+
+          // let filtered = data.filter((p)=>{
+          //   return true;
+          // })
+
+        })
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <!-- 사원번호 empno, 이름 ename 을 입력하고
+  로그인 버튼을 누르면
+  emp.json 안에 있는 회원인지 검사하고
+  회원이맞으면 alert("환영데스요 출력") 
+  회원이 아니라면 alert("빠꾸")-->
+  <input type="text" id="empno"><br>
+  <input type="text" id="ename"> <button id="btn1">로그인</button>
+
+</body>
+</html>

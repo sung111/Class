@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top {
+      height: 100vh;
+    }
+
+    .menusel {
+      display: flex;
+      justify-content: space-around;
+      padding: 20px;
+      font-size: 20px;
+      background-color: rgb(139, 139, 214);
+    }
+
+    .view {
+      padding-left: 20px;
+      margin: 15px;
+      border: 1px solid black;
+    }
+    .view2{
+      width: 100%;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .view22{
+      width: 300px;
+    }
+    
+    .comment {
+      height: 300px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top">
+    <div class="menusel">
+      <div>자재관리</div>
+      <div>품질관리</div>
+      <div>작업관리</div>
+      <div>생산관리</div>
+      <div>생산report</div>
+      <div>설정</div>
+    </div>
+    <div class="view">
+      <h2>입출고관리의 주요 업무는 다음과 같습니다.</h2>
+      <ol>
+        <li>
+          재고 입출고 정보를 모니터링하고 재고 관리 시스템에 반영합니다.
+        </li>
+        <li>
+          발주-입고 수량을 체크하고, 제품 상태를 확인합니다.
+        </li>
+        <li>
+          출고 제품의 상태를 점검하고 문제가 있을 경우 신속한 대응을 합니다.
+        </li>
+        <li>
+          창고 내에서 재고의 입고, 출고, 이동, 보관 등의 모든 과정을 기록하고 관리합니다.
+        </li>
+        <li>
+          재고의 흐름을 명확히 파악하고, 적절한 재고 수준을 유지합니다.
+        </li>
+      </ol>
+    </div>
+    <div class="view2">
+      <div class="view22">
+        자재관리현황
+      </div>
+      <div class="viewbox">
+        현제 자재 관리현황 출력
+      </div>
+    </div>
+    <div class="comment">
+      <div class="text"><input type="text"><button>댓글달기</button></div>
+      <div class="comview">
+        댓글1 <button>수정</button><button>삭제</button>
+      </div>
+      <div class="comview">
+        댓글2 <button>수정</button><button>삭제</button>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -13,9 +13,7 @@ public class DriverExam {
 		d.run( landrover );
 		
 //		HumanCar humanCar = new HumanCar();
-//		d.run(humanCar);
-		
-		
+//		d.run(humanCar);;
 		
 		
 		

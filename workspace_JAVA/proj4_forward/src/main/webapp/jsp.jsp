@@ -28,8 +28,13 @@ System.out.println("java 크랙!");
 	out.println(text);
 %><br>
 	<%= text %>
-
 	
+<hr>
+<!-- 액션태그 -->
+<jsp:include page="header.jsp">
+	<jsp:param value="KeungMin" name="id"/>
+</jsp:include>
+
 	
 	
 	

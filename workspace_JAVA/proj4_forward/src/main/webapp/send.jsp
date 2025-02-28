@@ -8,11 +8,8 @@
 </head>
 <body>
 
-<header>
-	<div>이거 해더임</div>
-	<div>로고 here</div>
-	<div>${param.id} 님 환영데스</div>
-</header>
+<!-- 액션태그 -->
+
 
 </body>
 </html>

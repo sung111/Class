@@ -7,12 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<header>
-	<div>이거 해더임</div>
-	<div>로고 here</div>
-	<div>${param.id} 님 환영데스</div>
-</header>
-
+무언가 써놓았는데 보이나요?
+<!-- 액션태그 -->
+<jsp:forward page="jsp.jsp">
+	<jsp:param name="id" value="123"/>
+</jsp:forward>
 </body>
 </html>

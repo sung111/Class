@@ -20,8 +20,6 @@
 	\${ fn:indexOf(title, "팔") } : ${ fn:indexOf(title, "팔") }<br>
 	\${ fn:indexOf(title, "백") } : ${ fn:indexOf(title, "백") }<br>
 	
-	
-	
 
 </body>
 </html>

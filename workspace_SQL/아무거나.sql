@@ -1746,19 +1746,35 @@ select e.empno, e.ename, d.dname, d.loc
 from emp e join dept d using(deptno)
 order by d.dname desc;
 
+select * from emp;
 
 
 
 
 
+create table todo (
+    todo_id number primary key,
+    todo varchar2(4000) not null,
+    create_date date not null,
+    modify_date date,
+    done char(1) not null
+);
+
+create sequence seq_todo;
+
+select * from todo;
 
 
+insert into todo
+values ( seq_todo.nextval, 'test', sysdate, null, 'N');
+
+select * from todo;
 
 
-
-
-
-
+update todo
+set done = "Y"
+where todo_id = 4
+;
 
 
 

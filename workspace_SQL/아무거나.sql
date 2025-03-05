@@ -1771,10 +1771,15 @@ values ( seq_todo.nextval, 'test', sysdate, null, 'N');
 select * from todo;
 
 
-update todo
-set done = "Y"
-where todo_id = 4
-;
+update todo set done = 'Y' where todo_id = 4;
+
+commit;
+
+delete from todo
+where todo_id=5;
+
+
+
 
 
 

@@ -24,6 +24,6 @@
 	<input type="submit" value="등록">
 </form>
 <img src="http://localhost:8080/proj7_file/download.do?filename=1741160968241_111.png">
-
+<
 </body>
 </html>

@@ -25,8 +25,7 @@ select job from emp;
 select distinct job, deptno from emp;
 
 
-select ename, sal, sal*12+comm, comm
-    from emp;
+select ename, sal, sal*12+comm, commfrom emp;
     
     
 select ename, sal, sal*12+comm as 연봉, comm
@@ -37,9 +36,6 @@ select ename, sal, sal*12+comm 연봉, comm "인센 티브"
     
 
 SELECT * FROM EMP ORDER BY job, sal desc;
-
-
-
 
 
 --q2
@@ -1779,7 +1775,116 @@ delete from todo
 where todo_id=5;
 
 
+--트리거 삭제
+DROP TRIGGER SCOTT3_3.TRG_INVENTORYID;
 
 
+CREATE SEQUENCE DISPOSALID_SEQ --시퀀스이름
+START WITH 1 -- 시작값
+INCREMENT BY 1 -- 증가값 (1씩 증가)
+NOCACHE; -- 캐시 사용 안 함 (안전한 증가 보장)
 
 
+CREATE OR REPLACE TRIGGER TRG_DISPOSALID--트리거이름
+BEFORE INSERT ON FAILUREDISPOSALS -- 테이블이름
+FOR EACH ROW
+BEGIN
+    -- 만약 시퀀스 값이 NULL이면 시퀀스 값 자동 입력
+    IF :NEW.DISPOSALID IS NULL THEN
+        :NEW.DISPOSALID := DISPOSALID_SEQ.NEXTVAL;
+    END IF;
+END;
+
+
+-- 테스트값 삽입 방법
+-- 시퀀스값을 자동으로올리기위해서 pk는 널로 지정하고 넣기.
+INSERT INTO ORDERID
+VALUES ('','VALUE2','3', 2);
+Create table Shop(
+    shopId number(30)           NOT NULL,
+    shopName varchar2(200)      NOT NULL,
+    shopAddress varchar2(200)   NOT NULL,
+    shopNum number(12)          NOT NULL,
+    shopCategory varchar2(200)  Null,
+    shopTime varchar2(200)      Null,
+    shopWay varchar2(200)       Null,
+    shopLOcal varchar2(200)     NOT NULL,
+    shopRivew varchar2(200)     Null,
+    shopRivewEa varchar2(200)   null
+);
+Create table Menu(
+    menuId varchar2(200)        NOT NULL,
+    shopId varchar2(200)        NOT NULL,
+    menuName varchar2(200)      NOT NULL,
+    menuCategory varchar2(200)  Null,
+    menuPrice varchar2(200)     NOT NULL,
+    menuPhoto varchar2(200)     Null,
+    menuAdd varchar2(200)       null
+);
+Create table basket(
+    basketId number(30)         NOT NULL,
+    orderId number(30)          NOT NULL,
+    menuId number(30)           NOT NULL,
+    menuEa number(30)           NOT NULL
+);
+Create table sOrder(
+    orderId number(30)          NOT NULL,
+    shopId number(30)           NOT NULL,
+    memberId number(30)         NOT NULL,
+    paymentMethod varchar2(200) NOT NULL,
+    orderMethod varchar2(200)   NOT NULL,
+    request varchar2(4000)      Null,
+    allpay number(30)           NOT NULL
+);
+create table Review(
+    reviewId number(30)         NOT NULL,
+    memberId varchar2(200)      NOT NULL,
+    orderId number(30)          NOT NULL,
+    star number(1)              NOT NULL,
+    reviewText varchar2(4000)   null,
+    reviewPhoto varchar2(4000)  null,
+    reviewDate date             NOT NULL
+);
+create table Member(
+    memberId varchar2(12)       NOT NULL,
+    memberPw varchar2(18)       NOT NULL,
+    memberName varchar2(8)      NOT NULL,
+    mail varchar2(40)           NOT NULL,
+    memberNum number(11)        NOT NULL,
+    memberAddress varchar2(200) NOT NULL
+);
+
+
+alter table shop add constraint pk_shop primary key(
+    shopId
+);
+
+alter table menu add constraint pk_menu primary key(
+    menuId
+);
+
+alter table basket add constraint pk_basket primary key(
+    basketId
+);
+
+alter table sorder add constraint pk_sorder primary key(
+    orderId
+);
+
+alter table review add constraint pk_review primary key(
+    reviewId
+);
+
+alter table member add constraint pk_member primary key(
+    memberId
+);
+
+select * from boms;
+
+ALTER TABLE POSTS
+ADD "NOTIFY"	VARCHAR2(1)		NOT NULL;
+
+DESC POSTS;
+
+insert into productionplans
+value("",)

@@ -64,7 +64,7 @@ body {
 			
 			const content = document.querySelector('#content');
 			
-/* 				let html1 = ''
+ 				let html1 = ''
  				html1 +=	`		<tr>`
 				html1 +=	`			<th>`
 				html1 +=	`				선택`
@@ -87,7 +87,7 @@ body {
 				html1 +=	`			<th>`
 				html1 +=	`				수정하기`
 				html1 +=	`			</th>`
-				html1 +=	`		</tr>` */
+				html1 +=	`		</tr>`
 			for(let dto of list){
 				const tr = document.createElement('tr');
 				
@@ -112,7 +112,6 @@ body {
 				
 				content.prepend(tr);
 			}
-			
 		}
 	}
 

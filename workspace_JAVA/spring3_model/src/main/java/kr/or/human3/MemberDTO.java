@@ -5,9 +5,18 @@ public class MemberDTO {
 	String id;
 	String pw;
 	String name;
+	int age;
+	
+
 	@Override
 	public String toString() {
-		return "MemberDTO [id=" + id + ", pw=" + pw + ", name=" + name + "]";
+		return "MemberDTO [id=" + id + ", pw=" + pw + ", name=" + name + ", age=" + age + "]";
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
 	}
 	public String getId() {
 		return id;

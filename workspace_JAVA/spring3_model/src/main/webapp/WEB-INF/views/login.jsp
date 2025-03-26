@@ -8,7 +8,7 @@
 </head>
 <body>
 	Hello World<br>
-	<form method="post" action="login3">
+	<form method="post" action="login15">
 		id :<input type="text" name="id"><br>
 		pw :<input type="password" name="pw"><br>
 		<input type="submit" value="로그인">

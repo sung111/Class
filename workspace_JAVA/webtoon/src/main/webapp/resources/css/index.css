@@ -1,0 +1,42 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+.pageName{
+  font-size: 80px;
+  border: 1px solid black;
+  text-align: center;
+}
+.warrap{
+  display: flex;
+}
+.category{
+  border: 1px solid black;
+  width: 10%;
+  height: 80vh;
+  text-align: center;
+}
+.category>div{
+  border: 1px solid black;
+  text-align: center;
+}
+.mainPage{
+  width: 90%;
+}
+.content{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgb(155, 155, 155);
+  width: 250px;
+}
+img{
+  width: 100%;
+}
+.btn{
+  font-size: 25px;
+}
+.btns{
+  text-align: end;
+  border: 1px solid black;
+}

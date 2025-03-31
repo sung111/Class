@@ -22,4 +22,25 @@ public class EmpServiceImpl implements EmpService{
 		return list;
 	}
 
+	
+	@Override
+	public EmpDTO getEmpOne() {
+		
+		EmpDTO dto = empDAO.selectOneEmp();
+		
+		return dto;
+	}
+
+
+	@Override
+	public EmpDTO getEmpno(int a) {
+		EmpDTO dto = empDAO.selectOneEmpno(a);
+		return dto;
+	}
+	@Override
+	public EmpDTO getEmpno2(EmpDTO empDTO) {
+		EmpDTO dto = empDAO.selectOneEmpno2(empDTO);
+		return dto;
+	}
+
 }

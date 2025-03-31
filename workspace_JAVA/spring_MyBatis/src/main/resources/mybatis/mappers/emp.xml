@@ -7,5 +7,31 @@
 	<select id="selectEmp" resultType="kr.or.human.dto.EmpDTO">
 		select * from emp2
 	</select>
-
+	<select id="selectOnEmp" resultType="kr.or.human.dto.EmpDTO">
+			select * from emp2
+			where empno = 7788
+	</select>
+<!-- 	<select id="selectOnEmp" resultType="java.util.HashMap"> -->
+<!-- 	<select id="selectOnEmp" resultType="hashmap"> -->
+<!-- 	parameterType="java.lang.Integer" -->
+	<select id="selectOneEmpno" resultType="empDTO"
+	parameterType="int">
+			select * from emp2
+			where empno = #{_parameter}
+	</select>
+	<select id="selectOneEmpno2" resultType="empDTO"
+	parameterType="empDTO">
+			select * from emp2
+			where ename = #{ename}
+<!-- 		#{} : '' 를 자동으로 붙여줌. (숫자는 안붙임)
+			where ename = 'KING'
+			where empno = 123
+			
+			${} : '' 를 안붙여줌
+			where ename = KING
+			
+			그러하여 이렇게적을수있음
+			where ename = '${_parameter}'
+			-->
+	</select>
 </mapper>

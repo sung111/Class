@@ -5,8 +5,10 @@ import java.util.List;
 import kr.or.human.dto.EmpDTO;
 
 public interface EmpDAO {
-	List<EmpDTO> selectEmpList();
+	public List<EmpDTO> selectEmpList();
 	public EmpDTO selectOneEmp();
-	EmpDTO selectOneEmpno(int a);
-	EmpDTO selectOneEmpno2(EmpDTO empDTO);
+	public EmpDTO selectOneEmpno(int a);
+	public EmpDTO selectOneEmpno2(EmpDTO empDTO);
+	public int update(EmpDTO empDTO);
+	public int insert(EmpDTO empDTO);
 }

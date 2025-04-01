@@ -42,5 +42,15 @@ public class EmpServiceImpl implements EmpService{
 		EmpDTO dto = empDAO.selectOneEmpno2(empDTO);
 		return dto;
 	}
+	@Override
+	public int setUpdate(EmpDTO empDTO) {
+		int result = empDAO.update(empDTO);
+		return result;
+	}
+	@Override
+	public int setInsert(EmpDTO empDTO) {
+		int result = empDAO.insert(empDTO);
+		return result;
+	}
 
 }

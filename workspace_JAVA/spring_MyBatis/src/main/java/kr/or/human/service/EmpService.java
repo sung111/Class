@@ -9,4 +9,6 @@ public interface EmpService {
 	public EmpDTO getEmpOne();
 	public EmpDTO getEmpno(int a);
 	public EmpDTO getEmpno2(EmpDTO empDTO);
+	public int setUpdate(EmpDTO empDTO);
+	public int setInsert(EmpDTO empDTO);
 }

@@ -8,30 +8,35 @@
 		select * from emp2
 	</select>
 	<select id="selectOnEmp" resultType="kr.or.human.dto.EmpDTO">
-			select * from emp2
-			where empno = 7788
+		select * from emp2
+		where empno = 7788
 	</select>
-<!-- 	<select id="selectOnEmp" resultType="java.util.HashMap"> -->
-<!-- 	<select id="selectOnEmp" resultType="hashmap"> -->
-<!-- 	parameterType="java.lang.Integer" -->
+	<!-- <select id="selectOnEmp" resultType="java.util.HashMap"> -->
+	<!-- <select id="selectOnEmp" resultType="hashmap"> -->
+	<!-- parameterType="java.lang.Integer" -->
 	<select id="selectOneEmpno" resultType="empDTO"
-	parameterType="int">
-			select * from emp2
-			where empno = #{_parameter}
+		parameterType="int">
+		select * from emp2
+		where empno = #{_parameter}
 	</select>
 	<select id="selectOneEmpno2" resultType="empDTO"
-	parameterType="empDTO">
-			select * from emp2
-			where ename = #{ename}
-<!-- 		#{} : '' 를 자동으로 붙여줌. (숫자는 안붙임)
-			where ename = 'KING'
-			where empno = 123
-			
-			${} : '' 를 안붙여줌
-			where ename = KING
-			
-			그러하여 이렇게적을수있음
-			where ename = '${_parameter}'
-			-->
+		parameterType="empDTO">
+		select * from emp2
+		where ename = #{ename}
+		<!-- #{} : '' 를 자동으로 붙여줌. (숫자는 안붙임) where ename = 'KING' where empno = 
+			123 ${} : '' 를 안붙여줌 where ename = KING 그러하여 이렇게적을수있음 where ename = '${_parameter}' -->
 	</select>
+	<update id="update" parameterType="empDTO">
+		update emp2
+		set ename = #{ename},
+		sal = #{sal},
+		comm = #{comm}
+		where empno = #{empno}
+	</update>
+	<insert id="insert" parameterType="empDTO">
+		insert into emp2
+		values ( #{empno}, #{ename},
+		#{job}, #{mgr}, to_date(#{hiredate}, 'yyyy-mm-dd'),
+		#{sal}, #{comm}, #{deptno} )
+	</insert>
 </mapper>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
@@ -46,6 +46,7 @@
 </style>
 
 <body>
+	<form method="post" action="emp"><input type=text name="ename" value="${ empDTO.ename }"><button>Ï°∞Ìöå</button></form>
 	<table>
 		<THead>
 			<tr>
@@ -66,15 +67,15 @@
 			</c:forEach>
 		</tbody>
 	</table>
-	<a href="insert"><button type="button">ª˝º∫</button></a>
-	<button type="button" id="btn">¡¯µø</button>
+	<a href="insert"><button type="button">ÏÉùÏÑ±</button></a>
+	<button type="button" id="btn">ÏßÑÎèô</button>
 	<div id="view"></div>
 
 <!-- 	<div id="dim"> -->
 <!-- 		<div id="popup"> -->
-<!-- 			<div class="title">¡¶∏Ò</div> -->
+<!-- 			<div class="title">Ï†úÎ™©</div> -->
 <!-- 			<div class="content"> -->
-<!-- 				≥ªøÎ<br> ≥ªøÎ -->
+<!-- 				ÎÇ¥Ïö©<br> ÎÇ¥Ïö© -->
 <!-- 			</div> -->
 <!-- 		</div> -->
 <!-- 	</div> -->
@@ -82,9 +83,9 @@
 	<script>
 		document.querySelector('#btn').addEventListener('click', (e)=>{
 			if(navigator.vibrate){
-				navigator.vibrate(1000) // ms¥‹¿ß
+				navigator.vibrate(1000) // msÎã®ÏúÑ
 			} else {
-				alert('¿ΩΩø');
+				alert('ÏùåÏä¥');
 			}
 		})
 		
@@ -95,45 +96,46 @@
 					angle :  \${screen.orientation.angle}
 				`
 			})
+
 		}
 		
-// 		≈∏¿Ã∆≤ø°º≠ øﬁ¬ πˆ∆∞¿ª ¥©∏£∏È øﬁ¬ πˆ∆∞¿Ã ¥≠∑»¥Ÿ¥¬∞… ¿˙¿Â.
-// 		≈∏¿Ã∆≤ø°º≠ øﬁ¬ πˆ∆∞¿ª ∂º∏È ∂≥æÓ¡¯∞… ¿˙¿Â
-// 		∏∂øÏΩ∫ √÷√ ∑Œ ¥≠∑∂¿ª∂ß ∏∂øÏΩ∫ ¿ßƒ°∞™¿˙¿Â
-		let isDragable = false;
-		let offsetX = 0;
-		let offsetY = 0;
-		document.querySelector('.title').addEventListener('mousedown', (e)=>{
-			isDragable = true;
-			console.log(isDragable)
-			
-			document.querySelector('#view').innerHTML=`
-				x:\${e.clientX}<br>
-				y:\${e.clientY}<br>
-			`
-			offsetX = e.clientX
-			offsetY = e.clientY
-		})
-		document.querySelector('.title').addEventListener('mouseup', (e)=>{
-			isDragable = false;
-		})
-		document.querySelector('.title').addEventListener('mousemove', (e)=>{
-			console.log(isDragable)
-			if(isDragable){
-				let diff_X = e.clientX - offsetX
-				let diff_Y = e.clientY - offsetY
-				
-// 				console.log( document.querySelector('#popup').style.top  )
-				console.log( document.querySelector('#popup').offsetTop  )
-				let popup = document.querySelector("#popup");
-				
-				popup.style.top = (popup.offsetTop + diff_Y)+'px'
-				popup.style.left = (popup.offsetLeft + diff_X)+'px'
-				
-				offsetX = e.clientX
-				offsetY = e.clientY
-			}
-		})
+// 		ÌÉÄÏù¥ÌãÄÏóêÏÑú ÏôºÏ™ΩÎ≤ÑÌäºÏùÑ ÎàÑÎ•¥Î©¥ ÏôºÏ™ΩÎ≤ÑÌäºÏù¥ ÎàåÎ†∏Îã§ÎäîÍ±∏ Ï†ÄÏû•.
+// 		ÌÉÄÏù¥ÌãÄÏóêÏÑú ÏôºÏ™ΩÎ≤ÑÌäºÏùÑ ÎñºÎ©¥ Îñ®Ïñ¥ÏßÑÍ±∏ Ï†ÄÏû•
+// 		ÎßàÏö∞Ïä§ ÏµúÏ¥àÎ°ú ÎàåÎ†ÄÏùÑÎïå ÎßàÏö∞Ïä§ ÏúÑÏπòÍ∞íÏ†ÄÏû•
+// 		let isDragable = false;
+// 		let offsetX = 0;
+// 		let offsetY = 0;
+// 		document.querySelector('.title').addEventListener('mousedown', (e)=>{
+// 			isDragable = true;
+// 			console.log(isDragable)
+
+// 			document.querySelector('#view').innerHTML=`
+// 				x:\${e.clientX}<br>
+// 				y:\${e.clientY}<br>
+// 			`
+// 			offsetX = e.clientX
+// 			offsetY = e.clientY
+// 		})
+// 		document.querySelector('.title').addEventListener('mouseup', (e)=>{
+// 			isDragable = false;
+// 		})
+// 		document.querySelector('.title').addEventListener('mousemove', (e)=>{
+// 			console.log(isDragable)
+// 			if(isDragable){
+// 				let diff_X = e.clientX - offsetX
+// 				let diff_Y = e.clientY - offsetY
+
+// // 				console.log( document.querySelector('#popup').style.top  )
+// 				console.log( document.querySelector('#popup').offsetTop  )
+// 				let popup = document.querySelector("#popup");
+
+// 				popup.style.top = (popup.offsetTop + diff_Y)+'px'
+// 				popup.style.left = (popup.offsetLeft + diff_X)+'px'
+
+// 				offsetX = e.clientX
+// 				offsetY = e.clientY
+// 			}
+// 		})
 
 	</script>
 </body>

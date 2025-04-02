@@ -11,4 +11,5 @@ public interface EmpService {
 	public EmpDTO getEmpno2(EmpDTO empDTO);
 	public int setUpdate(EmpDTO empDTO);
 	public int setInsert(EmpDTO empDTO);
+	public List search(EmpDTO empDTO);
 }

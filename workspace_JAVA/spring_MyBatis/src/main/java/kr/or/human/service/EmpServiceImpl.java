@@ -1,5 +1,6 @@
 package kr.or.human.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,12 @@ public class EmpServiceImpl implements EmpService{
 	public int setInsert(EmpDTO empDTO) {
 		int result = empDAO.insert(empDTO);
 		return result;
+	}
+	@Override
+	public List search(EmpDTO empDTO) {
+		List list = new ArrayList();
+		list = empDAO.search(empDTO);
+		return list;
 	}
 
 }

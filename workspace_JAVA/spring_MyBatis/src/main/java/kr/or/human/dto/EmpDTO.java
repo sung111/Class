@@ -26,6 +26,11 @@ public class EmpDTO {
 	private Integer comm;
 	private int deptno;
 	
+	private int page;		//현재 페이지
+	private int viewCount;	//페이지당 보여줄 수 countPerPage or rowPerpage
+	private int indexStart;
+	private int indexEnd;
+	
 	
 	
 	

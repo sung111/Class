@@ -137,9 +137,15 @@ public class EmpController {
 
 	@RequestMapping(value = "/emp")
 	public String search(Model model, EmpDTO empDTO) {
+
+		int page = 3;
+		int viewCount = 3;
+		
+		empDTO.setPage(page);
+		empDTO.setViewCount(viewCount);
 		List list = empService.search(empDTO);
 		System.out.println("result : " + list);
-
+		
 		model.addAttribute("list", list);
 		model.addAttribute("empDTO", empDTO);
 

@@ -53,11 +53,28 @@ public class EmpServiceImpl implements EmpService{
 		int result = empDAO.insert(empDTO);
 		return result;
 	}
+	
 	@Override
 	public List search(EmpDTO empDTO) {
 		List list = new ArrayList();
-		list = empDAO.search(empDTO);
+		
+		int page = empDTO.getPage();
+		int viewCount = empDTO.getViewCount();
+		
+		int indexStart = (viewCount * (page-1)) + 1;
+		int indexEnd = page * viewCount;
+		empDTO.setIndexStart(indexStart);
+		empDTO.setIndexEnd(indexEnd);
+		System.out.println("dto!!!! : " +  empDTO);
+		
+//		list = empDAO.search(empDTO);
+		list = empDAO.selectPageEmp(empDTO);
 		return list;
 	}
+	
+	
+	
+	
+	
 
 }

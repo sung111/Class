@@ -12,4 +12,5 @@ public interface EmpDAO {
 	public int update(EmpDTO empDTO);
 	public int insert(EmpDTO empDTO);
 	public List search(EmpDTO empDTO);
+	public List selectPageEmp(EmpDTO empDTO);
 }

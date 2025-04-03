@@ -39,4 +39,10 @@
 		#{job}, #{mgr}, to_date(#{hiredate}, 'yyyy-mm-dd'),
 		#{sal}, #{comm}, #{deptno} )
 	</insert>
+	
+	
+
+    
+    
+    
 </mapper>

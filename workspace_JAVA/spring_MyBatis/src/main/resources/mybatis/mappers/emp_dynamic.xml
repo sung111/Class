@@ -8,22 +8,46 @@
 		select * from emp2
 	</select>
 
-	<select id="searchEmp" resultType="empDTO" parameterType="empDTO">
+	<select id="searchEmp" resultType="empDTO"
+		parameterType="empDTO">
 		select * from emp2
 		<if test=" ename != null and ename != '' ">
 			where upper(ename) like upper('%' || #{ename} || '%')
 		</if>
-<!-- 		<if test=" sal != -1 "> -->
-<!-- 			where sal  <![CDATA[ >=  ]]> #{sal} -->
-<!-- 		</if> -->
+		<!-- <if test=" sal != -1 "> -->
+		<!-- where sal <![CDATA[ >= ]]> #{sal} -->
+		<!-- </if> -->
 
-<!-- 		where 태그는 if가 true일때 글자 'where' 로 변환됨 -->
-<!-- 		그리고 if가 true가 여러개이면 첫번째오는 AND 또는 OR 를 지워줌  -->
-<!-- 		<where> -->
-<!-- 			and !#@!@#$ -->
-<!-- 		</where> -->
+		<!-- where 태그는 if가 true일때 글자 'where' 로 변환됨 -->
+		<!-- 그리고 if가 true가 여러개이면 첫번째오는 AND 또는 OR 를 지워줌 -->
+		<!-- <where> -->
+		<!-- and !#@!@#$ -->
+		<!-- </where> -->
 	</select>
-
+	<select id="choose" resultType="empDTO" parameterType="empDTO">
+		select * from emp2
+		<choose>
+			<when test="ename != null and  ename !='' ">
+				and upper(ename) like upper('%' || #{stringvalue} || '%')
+			</when>
+			<when test="job != null and  job !='' ">
+				and upper(job) like upper('%' || #{stringvalue} || '%')
+			</when>
+			<otherwise>
+				and deptno = 20
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="foreach" resultType="empDTO" parameterType="empDTO">
+		select * from emp2
+<!--			where empno in (7566, 7698) -->
+		<where>
+			<foreach item="item" collection="empnos" open="empno in (" separator="," close=")">
+				#{item}
+			</foreach>
+		</where>
+	</select>
 
 
 </mapper>

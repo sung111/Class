@@ -8,39 +8,40 @@ import org.springframework.stereotype.Repository;
 
 import kr.or.human.dto.EmpDTO;
 
-
 @Repository
-public class EmpDAOImpl implements EmpDAO{
+public class EmpDAOImpl implements EmpDAO {
 
 	@Autowired
 	SqlSession sqlSession;
-	
+
 	@Override
 	public List<EmpDTO> selectEmpList() {
 		List<EmpDTO> reslut = sqlSession.selectList("mapper.emp.selectEmp");
 		System.out.println("reslut :" + reslut);
 		return reslut;
 	}
-	
+
 	@Override
 	public EmpDTO selectOneEmp() {
 		EmpDTO dto = sqlSession.selectOne("mapper.emp.selectOnEmp");
 		System.out.println("dto :" + dto);
 		return dto;
 	}
+
 	@Override
 	public EmpDTO selectOneEmpno(int a) {
 		EmpDTO dto = sqlSession.selectOne("mapper.emp.selectOneEmpno", a);
 		System.out.println("dto :" + dto);
 		return dto;
 	}
+
 	@Override
 	public EmpDTO selectOneEmpno2(EmpDTO empDTO) {
 		EmpDTO dto = sqlSession.selectOne("mapper.emp.selectOneEmpno2", empDTO);
 		System.out.println("dto :" + dto);
 		return dto;
 	}
-	
+
 	@Override
 	public int update(EmpDTO empDTO) {
 		System.out.println(empDTO);
@@ -48,7 +49,7 @@ public class EmpDAOImpl implements EmpDAO{
 		System.out.println("result :" + result);
 		return result;
 	}
-	
+
 	@Override
 	public int insert(EmpDTO empDTO) {
 		System.out.println(empDTO);
@@ -56,14 +57,22 @@ public class EmpDAOImpl implements EmpDAO{
 		System.out.println("result :" + result);
 		return result;
 	}
-	
+
 	@Override
 	public List search(EmpDTO empDTO) {
 		System.out.println(empDTO);
 		List list = sqlSession.selectList("mapper.emp.dynamic.searchEmp", empDTO);
-		System.out.println("searchEmp :" + list );
+//		List list = sqlSession.selectList("mapper.emp.dynamic.selectPageEmp", empDTO);
+		System.out.println("searchEmp :" + list);
 		return list;
 	}
 
-	
+	@Override
+	public List selectPageEmp(EmpDTO empDTO) {
+		System.out.println(empDTO);
+		List list = sqlSession.selectList("mapper.emp.page.selectPageEmp", empDTO);
+		System.out.println("searchEmp :" + list);
+		return list;
+	}
+
 }

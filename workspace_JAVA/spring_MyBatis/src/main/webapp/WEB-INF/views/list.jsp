@@ -79,7 +79,11 @@
 <!-- 			</div> -->
 <!-- 		</div> -->
 <!-- 	</div> -->
-
+	<div>
+		<a href="emp?page=1">1</a>
+		<a href="emp?page=2">2</a>
+		<a href="emp?page=3">3</a>
+	</div>
 	<script>
 		document.querySelector('#btn').addEventListener('click', (e)=>{
 			if(navigator.vibrate){

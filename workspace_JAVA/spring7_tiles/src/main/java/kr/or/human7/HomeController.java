@@ -19,13 +19,9 @@ public class HomeController {
 	@RequestMapping("/")
 	public String home() {
 		
-		
 //		return "layout/layout";
 //		return "toon";
 //		return "login";
 		return "webtoon.tiles";
 	}
-	
-	
-	
 }
